@@ -34,13 +34,7 @@ void main() async {
   await Stripe.instance.applySettings();
 
   await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: "AIzaSyCQvc7I3bcAxtYeJiy4uMT6hK5zxFmOutQ",
-      appId: "1:194072923569:android:32a6ad1c7adce23d6a8190",
-      messagingSenderId: "194072923569",
-      projectId: "booking-travel-flutter",
-      storageBucket: "booking-travel-flutter.appspot.com",
-    ),
+   
   );
   final fcmToken = await FirebaseMessaging.instance.getToken();
   if (fcmToken != null) {
