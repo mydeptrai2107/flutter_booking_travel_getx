@@ -111,9 +111,12 @@ class SearchTourScreen extends GetView<SearchTourController> {
                                       SvgPicture.asset(
                                         AssetHelper.icArrowDown2,
                                         width: getSize(18),
-                                        color: appController.isDarkModeOn.value
-                                            ? ColorConstants.white
-                                            : ColorConstants.black,
+                                        colorFilter: ColorFilter.mode(
+                                          appController.isDarkModeOn.value
+                                              ? ColorConstants.white
+                                              : ColorConstants.black,
+                                          BlendMode.srcIn,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -154,9 +157,12 @@ class SearchTourScreen extends GetView<SearchTourController> {
                                       SvgPicture.asset(
                                         AssetHelper.icArrowDown2,
                                         width: getSize(18),
-                                        color: appController.isDarkModeOn.value
-                                            ? ColorConstants.white
-                                            : ColorConstants.black,
+                                        colorFilter: ColorFilter.mode(
+                                          appController.isDarkModeOn.value
+                                              ? ColorConstants.white
+                                              : ColorConstants.black,
+                                          BlendMode.srcIn,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -206,9 +212,12 @@ class SearchTourScreen extends GetView<SearchTourController> {
                                       SvgPicture.asset(
                                         AssetHelper.icArrowDown2,
                                         width: getSize(18),
-                                        color: appController.isDarkModeOn.value
-                                            ? ColorConstants.white
-                                            : ColorConstants.black,
+                                        colorFilter: ColorFilter.mode(
+                                          appController.isDarkModeOn.value
+                                              ? ColorConstants.white
+                                              : ColorConstants.black,
+                                          BlendMode.srcIn,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -433,7 +442,10 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                       SvgPicture.asset(
                         AssetHelper.icStar,
                         width: getSize(20),
-                        color: ColorConstants.yellow,
+                        colorFilter: ColorFilter.mode(
+                          ColorConstants.yellow,
+                          BlendMode.srcIn,
+                        ),
                       ),
                       SizedBox(
                         width: getSize(16),
@@ -458,9 +470,12 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                       SvgPicture.asset(
                         AssetHelper.icCalendar,
                         width: getSize(20),
-                        color: appController.isDarkModeOn.value
+                        colorFilter: ColorFilter.mode(
+                          appController.isDarkModeOn.value
                             ? ColorConstants.dividerColor
                             : ColorConstants.botTitle,
+                          BlendMode.srcIn,
+                        ),
                       ),
                       SizedBox(
                         width: getSize(16),
@@ -489,9 +504,12 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                       SvgPicture.asset(
                         AssetHelper.icBuy,
                         width: getSize(20),
-                        color: appController.isDarkModeOn.value
+                        colorFilter: ColorFilter.mode(
+                          appController.isDarkModeOn.value
                             ? ColorConstants.dividerColor
                             : ColorConstants.botTitle,
+                          BlendMode.srcIn,
+                        ),
                       ),
                       SizedBox(
                         width: getSize(16),

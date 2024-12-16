@@ -11,6 +11,7 @@ import 'package:doan_clean_achitec/shared/constants/assets_helper.dart';
 import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/utils/app_bar_widget.dart';
 import 'package:doan_clean_achitec/shared/utils/size_utils.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -147,9 +148,11 @@ void launchEmailApp(String feedback, String nameUser) async {
     },
   );
 
-  if (await canLaunch(emailLaunchUri.toString())) {
-    await launch(emailLaunchUri.toString());
+  if (await canLaunchUrl(Uri.parse(emailLaunchUri.toString()))) {
+    await canLaunchUrl(Uri.parse(emailLaunchUri.toString()));
   } else {
-    print('Could not launch email app');
+    if (kDebugMode) {
+      print('Could not launch email app');
+    }
   }
 }

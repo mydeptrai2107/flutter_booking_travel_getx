@@ -177,7 +177,7 @@ class AssetHelper {
   static const String city_6 = 'assets/images/x2/city_6.jpg';
   static const String city_7 = 'assets/images/x2/city_7.jpg';
   static const String city_8 = 'assets/images/x2/city_8.jpg';
-  static const String city_bgr_1 = 'assets/images/x2/city_bgr_1.jpg';
+  static const String cityBgr1 = 'assets/images/x2/city_bgr_1.jpg';
 
   static const String des1 = 'assets/images/x2/des1.jpg';
   static const String des2 = 'assets/images/x2/des2.jpg';
@@ -193,13 +193,13 @@ class AssetHelper {
   static const String hotel_2 = 'assets/images/x2/hotel_2.jpg';
   static const String hotel_3 = 'assets/images/x2/hotel_3.jpg';
 
-  static const String hotel_details_tour_01 =
+  static const String hotelDetailsTour01 =
       'assets/images/x2/img_details_tour_01.svg';
 
-  static const String img_room_2 = 'assets/images/x2/img_room_2.jpg';
-  static const String img_room_3 = 'assets/images/x2/img_room_3.jpg';
-  static const String img_room_4 = 'assets/images/x2/img_room_4.jpg';
-  static const String img_room_5 = 'assets/images/x2/img_room_5.jpg';
+  static const String imgRoom2 = 'assets/images/x2/img_room_2.jpg';
+  static const String imgRoom3 = 'assets/images/x2/img_room_3.jpg';
+  static const String imgRoom4 = 'assets/images/x2/img_room_4.jpg';
+  static const String imgRoom5 = 'assets/images/x2/img_room_5.jpg';
 
   static const String imgHotel01 = 'assets/images/x2/img_hotel_slide_01.png';
   static const String imgHotel02 = 'assets/images/x2/img_hotel_slide_02.png';

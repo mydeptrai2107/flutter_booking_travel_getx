@@ -5,6 +5,7 @@ import 'package:doan_clean_achitec/shared/constants/local_storage.dart';
 import 'package:doan_clean_achitec/shared/services/notification.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -44,14 +45,18 @@ void main() async {
   final fcmToken = await FirebaseMessaging.instance.getToken();
   if (fcmToken != null) {
     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
-      print("onMessageOpenedApp: $event");
+      if (kDebugMode) {
+        print("onMessageOpenedApp: $event");
+      }
     });
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
     subscribeToBookingTopic();
     LocalStorageHelper.setString('fcmToken', fcmToken);
   } else {
-    print('fcmToken is null');
+    if (kDebugMode) {
+      print('fcmToken is null');
+    }
   }
   final handler = NotificationHandler();
   handler.setListeners();
@@ -65,7 +70,9 @@ void subscribeToBookingTopic() async {
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // Handle the message when the app is in the background
-  print("onBackgroundMessage: $message");
+  if (kDebugMode) {
+    print("onBackgroundMessage: $message");
+  }
   // Show a notification or perform other actions as needed
 }
 

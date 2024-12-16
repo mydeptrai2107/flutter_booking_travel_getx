@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +24,9 @@ class NotificationHandler {
     try {
       messaging.unsubscribeFromTopic("notification_cms_okokadex").then(print);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -31,17 +34,22 @@ class NotificationHandler {
     try {
       messaging.subscribeToTopic("notification_cms_okokadex").then(print);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-
-      print('Message data: ${message.data}');
+      if (kDebugMode) {
+        print('Message data: ${message.data}');
+      }
 
       try {
         if (message.notification != null) {
-          print('Message title: ${message.notification!.title}');
-          print('Message body: ${message.notification!.body}');
+          if (kDebugMode) {
+            print('Message title: ${message.notification!.title}');
+            print('Message body: ${message.notification!.body}');
+          }
 
           flutterLocalNotificationsPlugin.show(
             0,
@@ -67,7 +75,9 @@ class NotificationHandler {
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      print('A new onMessageOpenedApp event was published! ${message.data}');
+      if (kDebugMode) {
+        print('A new onMessageOpenedApp event was published! ${message.data}');
+      }
     });
   }
 

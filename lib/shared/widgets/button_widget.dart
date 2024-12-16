@@ -7,8 +7,7 @@ import '../constants/dimension_constants.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget(
-      {Key? key, required this.textBtn, this.onTap, this.color, this.gradient})
-      : super(key: key);
+      {super.key, required this.textBtn, this.onTap, this.color, this.gradient});
 
   final String textBtn;
   final Function()? onTap;

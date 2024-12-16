@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doan_clean_achitec/shared/constants/constants.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/weather.dart';
@@ -27,19 +28,19 @@ class DetailPlaceController extends GetxController {
       _weather = await _weatherFactory.currentWeatherByCityName(nameCity);
       getWeather();
     } catch (e) {
-      print("Error fetching weather data: $e");
+      if (kDebugMode) {
+        print("Error fetching weather data: $e");
+      }
       Get.snackbar(StringConst.warning.tr, "$e");
     }
   }
 
   void getWeather() {
-    if (_weather != null) {
-      temperatureCelsius.value = _weather.temperature?.celsius ?? 0.0;
-      windSpeed.value = _weather.windSpeed ?? 0.0;
-      humidity.value = _weather.humidity ?? 0.0;
-      pressure.value = _weather.pressure ?? 0.0;
-      cloudiness.value = _weather.cloudiness ?? 0.0;
-    }
+    temperatureCelsius.value = _weather.temperature?.celsius ?? 0.0;
+    windSpeed.value = _weather.windSpeed ?? 0.0;
+    humidity.value = _weather.humidity ?? 0.0;
+    pressure.value = _weather.pressure ?? 0.0;
+    cloudiness.value = _weather.cloudiness ?? 0.0;
   }
 
   Future<void> getAllTourModelData(String idCity) async {

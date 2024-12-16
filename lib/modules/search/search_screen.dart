@@ -230,9 +230,12 @@ class ListSearchTour extends StatelessWidget {
                                       child: SvgPicture.asset(
                                         AssetHelper.icDelete,
                                         height: getSize(24),
-                                        color: appController.isDarkModeOn.value
+                                        colorFilter: ColorFilter.mode(
+                                          appController.isDarkModeOn.value
                                             ? ColorConstants.lightStatusBar
-                                            : ColorConstants.grey800,
+                                            : ColorConstants.grey800!,
+                                            BlendMode.srcIn,
+                                        ),
                                       ),
                                     ),
                                     SizedBox(

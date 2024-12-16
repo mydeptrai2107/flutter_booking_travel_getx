@@ -9,13 +9,13 @@ class MyButton extends StatelessWidget {
   final double? borderSize;
 
   const MyButton({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.textBtn,
     this.colorBgr,
     this.widthSize,
     this.borderSize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

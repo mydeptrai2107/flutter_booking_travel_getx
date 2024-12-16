@@ -97,7 +97,10 @@ class AddVideoScreen extends StatelessWidget {
         child: Center(
           child: SvgPicture.asset(
             AssetHelper.icPlus,
-            color: ColorConstants.whiteColor,
+            colorFilter: ColorFilter.mode(
+              ColorConstants.whiteColor,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ),

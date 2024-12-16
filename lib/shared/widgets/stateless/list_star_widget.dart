@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import '../../constants/app_style.dart';
 
 class ListStarWidget extends StatelessWidget {
-  const ListStarWidget({Key? key, required this.desti}) : super(key: key);
+  const ListStarWidget({super.key, required this.desti});
 
   final double desti;
 

@@ -108,8 +108,7 @@ class DetailPlaceScreen extends GetView<DetailPlaceController> {
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(20)),
                                       image: DecorationImage(
-                                        image:
-                                            AssetImage(AssetHelper.city_bgr_1),
+                                        image: AssetImage(AssetHelper.cityBgr1),
                                         fit: BoxFit.cover,
                                       ),
                                     )

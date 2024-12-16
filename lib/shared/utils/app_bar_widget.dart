@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({
-    Key? key,
+    super.key,
     this.height,
     this.leading,
     this.titles,
@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor,
     this.iconBgrColor,
     this.onTap,
-  }) : super(key: key);
+  });
 
   double? height;
 

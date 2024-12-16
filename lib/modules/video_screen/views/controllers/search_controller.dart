@@ -16,7 +16,7 @@ class SearchVideoController extends GetxController {
         .map((QuerySnapshot query) {
       List<User> retVal = [];
       for (var elem in query.docs) {
-        // retVal.add(UserModel.fromSnapshot(elem));
+        retVal.add(UserModel.fromSnapshot(elem as DocumentSnapshot<Map<String, dynamic>>) as User);
       }
       return retVal;
     }));

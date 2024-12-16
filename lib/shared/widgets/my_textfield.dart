@@ -15,7 +15,7 @@ class MyTextField extends StatefulWidget {
   final Widget? suffixIcon;
 
   const MyTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hintText,
     required this.obscureText,
@@ -23,7 +23,7 @@ class MyTextField extends StatefulWidget {
     this.isTypeNumb,
     this.isCheckReadOnly,
     this.suffixIcon,
-  }) : super(key: key);
+  });
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();

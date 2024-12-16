@@ -55,11 +55,11 @@ class FavoriteScreen extends GetView<FavoriteController> {
                           ? ColorConstants.primaryButton
                           : ColorConstants.primaryButton,
                       tabs: [
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,
                           child: Tab(text: 'Tour'),
                         ),
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,
                           child: Tab(text: 'Destination'),
                         ),

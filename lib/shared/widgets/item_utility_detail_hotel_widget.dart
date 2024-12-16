@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ItemUtilityDetailHotelWidget extends StatelessWidget {
-  ItemUtilityDetailHotelWidget({Key? key}) : super(key: key);
+  ItemUtilityDetailHotelWidget({super.key});
 
   final List<Map<String, String>> listUtility = [
     {

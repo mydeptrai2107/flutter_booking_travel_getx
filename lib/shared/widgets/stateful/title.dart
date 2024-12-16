@@ -6,7 +6,7 @@ import '../../../dark_mode.dart';
 import '../../constants/app_style.dart';
 
 class TitleHome extends StatefulWidget {
-  const TitleHome({Key? key, required this.title}) : super(key: key);
+  const TitleHome({super.key, required this.title});
   final String title;
 
   @override

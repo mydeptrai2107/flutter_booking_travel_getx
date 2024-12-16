@@ -262,7 +262,9 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
     try {
       if (status.isGranted) {
         currentPosition = await geolocator.Geolocator.getCurrentPosition(
-          desiredAccuracy: geolocator.LocationAccuracy.best,
+          locationSettings: geolocator.LocationSettings(
+            accuracy: geolocator.LocationAccuracy.best,
+          ),
         );
         final result = await polylinePoints.getRouteBetweenCoordinates(
           'AIzaSyB-Lyksir7H6TAkkMk4PxNUkOz3KyuV9y4',
@@ -297,7 +299,9 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
 
     if (status.isGranted) {
       currentPosition = await geolocator.Geolocator.getCurrentPosition(
-        desiredAccuracy: geolocator.LocationAccuracy.best,
+        locationSettings: geolocator.LocationSettings(
+            accuracy: geolocator.LocationAccuracy.best,
+          ),
       );
       polylineCoordinates.clear();
     } else if (status.isDenied) {
@@ -321,14 +325,14 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
   }
 
   void loadImageMarker() async {
-    final customCurrentMarker = await BitmapDescriptor.fromAssetImage(
+    final customCurrentMarker = await BitmapDescriptor.asset(
       const ImageConfiguration(
         size: Size(12, 12),
       ),
       'assets/icons/ic_current_marker.png',
     );
 
-    final customIconMarker = await BitmapDescriptor.fromAssetImage(
+    final customIconMarker = await BitmapDescriptor.asset(
       const ImageConfiguration(
         size: Size(12, 12),
       ),

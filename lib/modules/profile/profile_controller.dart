@@ -218,7 +218,7 @@ class ProfileController extends GetxController {
     });
   }
 
-  void createUser(UserModel userModel) async {
+  Future<void> createUser(UserModel userModel) async {
     await FirebaseFirestore.instance
         .collection('userModel')
         .add(userModel.toJson())
@@ -243,7 +243,7 @@ class ProfileController extends GetxController {
     });
   }
 
-  void createPushNotification(String idUser, String fcmToken) async {
+  Future<void> createPushNotification(String idUser, String fcmToken) async {
     await FirebaseFirestore.instance
         .collection('pushNotification')
         .add({

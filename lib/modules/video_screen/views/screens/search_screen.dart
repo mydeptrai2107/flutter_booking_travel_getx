@@ -2,7 +2,6 @@
 
 import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/shared/constants/string_constants.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -49,7 +48,6 @@ class SearchScreen extends StatelessWidget {
             : ListView.builder(
                 itemCount: searchController.searchedUsers.length,
                 itemBuilder: (context, index) {
-                  User user = searchController.searchedUsers[index];
                   return InkWell(
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(

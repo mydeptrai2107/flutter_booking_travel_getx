@@ -2,7 +2,7 @@ import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class TourStats extends StatelessWidget {
-  const TourStats({Key? key});
+  const TourStats({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:doan_clean_achitec/modules/auth/auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginOrRegister extends StatefulWidget {
-  const LoginOrRegister({Key? key}) : super(key: key);
+  const LoginOrRegister({super.key});
 
   @override
   State<LoginOrRegister> createState() => _LoginOrRegisterState();

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
@@ -143,77 +145,79 @@ class AuthController extends GetxController {
   }
 
   void register(BuildContext context) async {
-    AppFocus.unFocus(context);
+  // Loại bỏ focus khỏi các TextField (nếu có)
+  AppFocus.unFocus(context);
 
-    await showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (context) {
-        Timer(
-          const Duration(seconds: 1),
-          () {
-            Get.back();
-          },
-        );
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
+  // Hiển thị Dialog loading
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (context) => const Center(
+      child: CircularProgressIndicator(),
+    ),
+  );
+
+  try {
+    // Lấy dữ liệu từ các controller
+    final email = registerEmailController.text.trim();
+    final password = registerPasswordController.text.trim();
+    final confirmPassword = registerConfirmPasswordController.text.trim();
+
+    // Kiểm tra mật khẩu và xác nhận mật khẩu có khớp không
+    if (password != confirmPassword) {
+      Get.back(); // Đóng Dialog
+      wrongMessage(context, "Passwords don't match");
+      return;
+    }
+
+    // Đăng ký người dùng
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      Get.back(); // Đóng Dialog trước khi xử lý lỗi
+      if (e.code == 'email-already-in-use') {
+        wrongMessage(context, "Email đã tồn tại");
+      } else {
+        wrongMessage(context, "Đăng ký thất bại: ${e.code}");
+      }
+      return; // Kết thúc nếu có lỗi
+    }
+
+    // Lấy UID của người dùng mới
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+
+    // Tạo đối tượng UserModel
+    final userModel = UserModel(
+      id: uid,
+      email: email,
+      passWord: password,
+      phoneNub: "",
+      isActive: true,
     );
 
-    try {
-      final email = registerEmailController.text;
-      final password = registerPasswordController.text;
+    // Lưu thông tin người dùng vào database (thông qua _profileController)
+    _profileController.createUser(userModel);
 
-      final existingUser =
-          await FirebaseAuth.instance.fetchSignInMethodsForEmail(email);
+    // Thông báo thành công
+    Incorrect("Register Success");
 
-      if (existingUser.isNotEmpty) {
-        // ignore: use_build_context_synchronously
-        Get.back(result: context);
-        // ignore: use_build_context_synchronously
-        wrongMessage(context, "email-already-exists");
-        return;
-      }
+    // Lấy thông tin chi tiết người dùng
+    homeController.getUserDetails(email);
 
-      if (password == registerConfirmPasswordController.text) {
-        await FirebaseAuth.instance
-            .createUserWithEmailAndPassword(email: email, password: password);
+    // Xóa dữ liệu các controller
+    clearControllLogin();
 
-        // ignore: non_constant_identifier_names
-        final UID = FirebaseAuth.instance.currentUser?.uid;
-
-        final userModel = UserModel(
-          id: UID,
-          email: email,
-          passWord: password,
-          phoneNub: "",
-          isActive: true,
-        );
-
-        _profileController.createUser(userModel);
-
-        Incorrect("Register Success");
-
-        homeController.getUserDetails(email);
-
-        clearControllLogin();
-
-        // ignore: use_build_context_synchronously
-        Get.back();
-      } else {
-        // ignore: use_build_context_synchronously
-        Get.back();
-        // ignore: use_build_context_synchronously
-        wrongMessage(context, "Passwords don't match");
-      }
-    } on FirebaseAuthException catch (e) {
-      // ignore: use_build_context_synchronously
-      Get.back();
-      // ignore: use_build_context_synchronously
-      wrongMessage(context, "${e.code} register");
-    }
+    // Đóng Dialog và điều hướng (nếu cần)
+    Get.back();
+  } catch (e) {
+    // Xử lý lỗi chung (nếu có lỗi khác ngoài FirebaseAuthException)
+    Get.back();
+    wrongMessage(context, "Có lỗi xảy ra: $e");
   }
+}
 
   void login(BuildContext context) async {
     AppFocus.unFocus(context);
@@ -249,7 +253,6 @@ class AuthController extends GetxController {
 
       Get.back();
     } on FirebaseAuthException catch (e) {
-      // ignore: use_build_context_synchronously
       wrongMessage(context, e.code);
     }
   }

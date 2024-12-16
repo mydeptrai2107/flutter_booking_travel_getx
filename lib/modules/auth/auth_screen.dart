@@ -10,13 +10,12 @@ class AuthScreen extends GetView<AuthController> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
+    return PopScope(
       child: Scaffold(
         body: Center(
           child: _buildItems(context),
         ),
       ),
-      onWillPop: () async => false,
     );
   }
 

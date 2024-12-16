@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doan_clean_achitec/models/city/city_model.dart';
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
 import 'package:doan_clean_achitec/modules/home/home.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class FavoriteController extends GetxController {
@@ -48,12 +49,18 @@ class FavoriteController extends GetxController {
 
         getListTourFavourite.value = tourList;
 
-        print('List of favorite tours retrieved successfully.');
+        if (kDebugMode) {
+          print('List of favorite tours retrieved successfully.');
+        }
       } catch (e) {
-        print('Error getting favorite tours: $e');
+        if (kDebugMode) {
+          print('Error getting favorite tours: $e');
+        }
       }
     } else {
-      print('User is not logged in.');
+      if (kDebugMode) {
+        print('User is not logged in.');
+      }
     }
   }
 
@@ -91,12 +98,18 @@ class FavoriteController extends GetxController {
 
         getListDestination.value = desList;
 
-        print('List of favorite tours retrieved successfully.');
+        if (kDebugMode) {
+          print('List of favorite tours retrieved successfully.');
+        }
       } catch (e) {
-        print('Error getting favorite tours: $e');
+        if (kDebugMode) {
+          print('Error getting favorite tours: $e');
+        }
       }
     } else {
-      print('User is not logged in.');
+      if (kDebugMode) {
+        print('User is not logged in.');
+      }
     }
   }
 
@@ -111,9 +124,13 @@ class FavoriteController extends GetxController {
 
       await tourFavoriteCollection.add({'idTour': idTour});
       getListTourModelFavourite();
-      print('Tour added to favorites successfully.');
+      if (kDebugMode) {
+        print('Tour added to favorites successfully.');
+      }
     } else {
-      print('User is not logged in.');
+      if (kDebugMode) {
+        print('User is not logged in.');
+      }
     }
   }
 

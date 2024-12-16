@@ -4,6 +4,7 @@ import 'package:doan_clean_achitec/models/tour/tour_model.dart';
 import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/modules/profile/image_full_screen.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -98,7 +99,9 @@ class TourController extends GetxController {
         return "Unknown City";
       }
     } catch (e) {
-      print("Error getting current location: $e");
+      if (kDebugMode) {
+        print("Error getting current location: $e");
+      }
       return "Unknown City";
     }
   }

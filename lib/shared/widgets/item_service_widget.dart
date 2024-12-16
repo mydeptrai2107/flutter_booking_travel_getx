@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ItemServiceWidget extends StatelessWidget {
-  const ItemServiceWidget({Key? key}) : super(key: key);
+  const ItemServiceWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

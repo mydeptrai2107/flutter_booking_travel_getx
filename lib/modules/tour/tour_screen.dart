@@ -286,9 +286,9 @@ class TourScreen extends GetView<TourController> {
                               offset: const Offset(-20, 0),
                               scrollbarTheme: ScrollbarThemeData(
                                 radius: const Radius.circular(40),
-                                thickness: MaterialStateProperty.all(6),
+                                thickness: WidgetStateProperty.all(6),
                                 thumbVisibility:
-                                    MaterialStateProperty.all(true),
+                                    WidgetStateProperty.all(true),
                               ),
                             ),
                             menuItemStyleData: MenuItemStyleData(

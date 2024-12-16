@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -74,7 +76,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                   File? imageFile = await profileController
                                       .imageFonts.value[0].file;
                                   String path = imageFile?.path ?? '';
-                                  // ignore: use_build_context_synchronously
                                   profileController.showFullImageDialog(
                                       context, path);
                                 },

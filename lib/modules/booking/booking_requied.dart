@@ -157,9 +157,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     AssetHelper.icScan,
                                     height: getSize(36),
                                     width: getSize(36),
-                                    color: controller.isCheckQR.value
-                                        ? ColorConstants.lightCard
-                                        : ColorConstants.darkAppBar,
+                                    colorFilter: ColorFilter.mode(
+                                      controller.isCheckQR.value
+                                          ? ColorConstants.white
+                                          : ColorConstants.titleSearch,
+                                      BlendMode.srcIn,
+                                    ),
                                   ),
                                   SizedBox(height: getSize(28)),
                                   Text(
@@ -203,9 +206,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     AssetHelper.icDocument,
                                     height: getSize(36),
                                     width: getSize(36),
-                                    color: controller.isCheckBanking.value
-                                        ? ColorConstants.lightCard
-                                        : ColorConstants.darkAppBar,
+                                    colorFilter: ColorFilter.mode(
+                                      controller.isCheckQR.value
+                                          ? ColorConstants.lightCard!
+                                          : ColorConstants.darkAppBar,
+                                      BlendMode.srcIn,
+                                    ),
                                   ),
                                   SizedBox(height: getSize(28)),
                                   Text(
@@ -249,9 +255,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     AssetHelper.icWallet,
                                     height: getSize(36),
                                     width: getSize(36),
-                                    color: controller.isVisaCard.value
-                                        ? ColorConstants.lightCard
-                                        : ColorConstants.darkAppBar,
+                                    colorFilter: ColorFilter.mode(
+                                      controller.isCheckQR.value
+                                          ? ColorConstants.lightCard!
+                                          : ColorConstants.darkAppBar,
+                                      BlendMode.srcIn,
+                                    ),
                                   ),
                                   SizedBox(height: getSize(28)),
                                   Text(
@@ -347,7 +356,10 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     },
                                     child: SvgPicture.asset(
                                       AssetHelper.icMinus,
-                                      color: ColorConstants.green,
+                                      colorFilter: ColorFilter.mode(
+                                        ColorConstants.green,
+                                        BlendMode.srcIn,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(width: getSize(10)),
@@ -372,7 +384,10 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     },
                                     child: SvgPicture.asset(
                                       AssetHelper.icPlus,
-                                      color: ColorConstants.green,
+                                      colorFilter: ColorFilter.mode(
+                                        ColorConstants.green,
+                                        BlendMode.srcIn,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -445,7 +460,10 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     },
                                     child: SvgPicture.asset(
                                       AssetHelper.icMinus,
-                                      color: ColorConstants.green,
+                                      colorFilter: ColorFilter.mode(
+                                        ColorConstants.green,
+                                        BlendMode.srcIn,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(width: getSize(10)),
@@ -470,7 +488,10 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     },
                                     child: SvgPicture.asset(
                                       AssetHelper.icPlus,
-                                      color: ColorConstants.green,
+                                      colorFilter: ColorFilter.mode(
+                                        ColorConstants.green,
+                                        BlendMode.srcIn,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -492,9 +513,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                   onTap: () => Get.back(),
                   child: SvgPicture.asset(
                     AssetHelper.icCloseSquare,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.gray400
-                        : ColorConstants.grey800,
+                    colorFilter: ColorFilter.mode(
+                      appController.isDarkModeOn.value
+                          ? ColorConstants.gray400
+                          : ColorConstants.grey800!,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),

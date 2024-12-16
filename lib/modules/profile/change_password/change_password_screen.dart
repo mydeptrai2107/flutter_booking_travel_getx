@@ -76,7 +76,10 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
                               controller.isOldPasswordVisible.value
                                   ? AssetHelper.icHiddenPassword
                                   : AssetHelper.icShowPassword,
-                              color: ColorConstants.gray500,
+                              colorFilter: ColorFilter.mode(
+                                ColorConstants.gray500,
+                                BlendMode.srcIn,
+                              ),
                             ),
                           ),
                         ),
@@ -130,7 +133,10 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
                               controller.isNewPasswordVisible.value
                                   ? AssetHelper.icHiddenPassword
                                   : AssetHelper.icShowPassword,
-                              color: ColorConstants.gray500,
+                              colorFilter: ColorFilter.mode(
+                                ColorConstants.gray500,
+                                BlendMode.srcIn,
+                              ),
                             ),
                           ),
                         ),
@@ -185,7 +191,10 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
                               controller.isNewConfirmPasswordVisible.value
                                   ? AssetHelper.icHiddenPassword
                                   : AssetHelper.icShowPassword,
-                              color: ColorConstants.gray500,
+                              colorFilter: ColorFilter.mode(
+                                ColorConstants.gray500,
+                                BlendMode.srcIn,
+                              ),
                             ),
                           ),
                         ),

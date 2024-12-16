@@ -61,23 +61,23 @@ class HistoryScreen extends GetView<HistoryTourController> {
                         ? ColorConstants.primaryButton
                         : ColorConstants.primaryButton,
                     tabs: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.24,
                         child: Tab(text: 'Waiting'),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.24,
                         child: Tab(text: 'Upcoming'),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.24,
                         child: Tab(text: 'Happenning'),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.24,
                         child: Tab(text: 'Completed'),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.24,
                         child: Tab(text: 'Cancelled'),
                       ),

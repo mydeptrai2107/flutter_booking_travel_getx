@@ -143,8 +143,8 @@ class TourModel {
       'description': description,
       'idCity': idCity,
       'startDate':
-          startDate != null ? startDate!.toDate().toIso8601String() : null,
-      'endDate': endDate != null ? endDate!.toDate().toIso8601String() : null,
+          startDate?.toDate().toIso8601String(),
+      'endDate': endDate?.toDate().toIso8601String(),
       'price': price,
       'images': images,
       'duration': duration,

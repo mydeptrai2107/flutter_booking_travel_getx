@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '../../shared/constants/string_constants.dart';
 
 class PaymentScreen extends StatefulWidget {
-  const PaymentScreen({Key? key}) : super(key: key);
+  const PaymentScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api

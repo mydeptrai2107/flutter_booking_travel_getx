@@ -55,9 +55,12 @@ class TourQRCodeDetail extends StatelessWidget {
                     SvgPicture.asset(
                       AssetHelper.icSend,
                       width: getSize(20),
-                      color: appController.isDarkModeOn.value
+                      colorFilter: ColorFilter.mode(
+                        appController.isDarkModeOn.value
                           ? ColorConstants.dividerColor
                           : ColorConstants.botTitle,
+                        BlendMode.srcIn,
+                      ),
                     ),
                     SizedBox(
                       width: getSize(16),
@@ -84,9 +87,12 @@ class TourQRCodeDetail extends StatelessWidget {
                     SvgPicture.asset(
                       AssetHelper.icCalendar,
                       width: getSize(20),
-                      color: appController.isDarkModeOn.value
+                      colorFilter: ColorFilter.mode(
+                        appController.isDarkModeOn.value
                           ? ColorConstants.dividerColor
                           : ColorConstants.botTitle,
+                        BlendMode.srcIn,
+                      ),
                     ),
                     SizedBox(
                       width: getSize(16),

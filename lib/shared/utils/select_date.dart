@@ -12,7 +12,7 @@ import '../constants/string_constants.dart';
 
 // ignore: must_be_immutable
 class SelectDateScreen extends StatelessWidget {
-  SelectDateScreen({Key? key}) : super(key: key);
+  SelectDateScreen({super.key});
 
   final AppController appController = Get.find();
 

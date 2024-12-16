@@ -102,6 +102,7 @@ class PrettyQrSettings extends StatefulWidget {
   );
 
   const PrettyQrSettings({
+    super.key,
     required this.decoration,
     this.onChanged,
   });

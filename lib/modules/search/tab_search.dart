@@ -49,15 +49,15 @@ class TabSearchWidget extends GetView<SearchDesController> {
                           ? ColorConstants.primaryButton
                           : ColorConstants.primaryButton,
                       tabs: [
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: Tab(text: 'Popular destination'),
                         ),
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: Tab(text: 'Current tour'),
                         ),
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: Tab(text: 'Current destination'),
                         ),

@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class PayStripeScreen extends GetView<PayController> {
-  PayStripeScreen({Key? key}) : super(key: key);
+  PayStripeScreen({super.key});
 
   Map<String, dynamic>? paymentIntent;
 
