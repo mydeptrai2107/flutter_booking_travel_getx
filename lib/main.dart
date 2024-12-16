@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/routes/app_pages.dart';
 import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/constants/local_storage.dart';
@@ -13,17 +12,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 
-import 'modules/lang/translation_service.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterConfig.loadEnvVariables();
-  AppController darkMode = AppController();
 
-  await darkMode.loadDarkMode();
   await LocalStorageHelper.initLocalStorageHelper();
 
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle( 
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: ColorConstants.blue,
   ));
 
@@ -33,9 +28,7 @@ void main() async {
   Stripe.urlScheme = 'flutterstripe';
   await Stripe.instance.applySettings();
 
-  await Firebase.initializeApp(
-   
-  );
+  await Firebase.initializeApp();
   final fcmToken = await FirebaseMessaging.instance.getToken();
   if (fcmToken != null) {
     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
@@ -73,7 +66,6 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  final AppController controller = Get.put(AppController());
   final mainTheme = ThemeData(
     scaffoldBackgroundColor: ColorConstants.bgrLight,
     appBarTheme: const AppBarTheme(
@@ -81,27 +73,18 @@ class MyApp extends StatelessWidget {
     ),
   );
 
-  final darkTheme = ThemeData.dark();
-
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        enableLog: true,
-        initialRoute: Routes.SPLASH,
-        defaultTransition: Transition.fade,
-        getPages: AppPages.routes,
-        smartManagement: SmartManagement.keepFactory,
-        title: 'Flutter GetX Clean Travel',
-        theme: controller.isDarkModeOn.value
-            ? darkTheme.copyWith(brightness: Brightness.dark)
-            : mainTheme.copyWith(brightness: Brightness.light),
-        locale: TranslationService.locale,
-        fallbackLocale: TranslationService.fallbackLocale,
-        translations: TranslationService(),
-        builder: EasyLoading.init(),
-      ),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      enableLog: true,
+      initialRoute: Routes.SPLASH,
+      defaultTransition: Transition.fade,
+      getPages: AppPages.routes,
+      smartManagement: SmartManagement.keepFactory,
+      title: 'Flutter GetX Clean Travel',
+      theme: mainTheme.copyWith(brightness: Brightness.light),
+      builder: EasyLoading.init(),
     );
   }
 }

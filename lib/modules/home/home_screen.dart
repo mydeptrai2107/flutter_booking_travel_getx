@@ -1,10 +1,9 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/models/Destination.dart';
 import 'package:doan_clean_achitec/modules/booking/booking.dart';
+import 'package:doan_clean_achitec/modules/history_tour/history_tour_screen.dart';
 import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/modules/search/search.dart';
 import 'package:doan_clean_achitec/modules/tour/tour.dart';
-import 'package:doan_clean_achitec/modules/video_screen/views/screens/video_screen.dart';
 import 'package:doan_clean_achitec/shared/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +27,6 @@ final userName = user.email.toString().substring(0, 3);
 final UserController userController = Get.find();
 final HomeController homeController = Get.find();
 final TourController tourController = Get.put(TourController());
-final AppController appController = Get.find();
 
 class _HomeScreenState extends State<HomeScreen> {
   User? user;
@@ -85,15 +83,9 @@ class _HomeScreenState extends State<HomeScreen> {
             homeController.currentIndex.value = index;
           },
           currentIndex: homeController.currentIndex.value,
-          selectedItemColor: appController.isDarkModeOn.value
-              ? ColorConstants.white
-              : ColorConstants.primaryButton,
-          unselectedItemColor: appController.isDarkModeOn.value
-              ? ColorConstants.white.withOpacity(.5)
-              : ColorConstants.primaryButton.withOpacity(0.2),
-          backgroundColor: appController.isDarkModeOn.value
-              ? ColorConstants.darkAppBar
-              : ColorConstants.white,
+          selectedItemColor: ColorConstants.primaryButton,
+          unselectedItemColor: ColorConstants.primaryButton.withOpacity(0.2),
+          backgroundColor: ColorConstants.white,
           curve: Curves.easeOutQuint,
           duration: const Duration(milliseconds: 1000),
           items: [
@@ -117,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 FontAwesomeIcons.ccDiscover,
                 size: kDefaultIconSize,
               ),
-              title: const Text('Discover'),
+              title: const Text('History'),
             ),
             SalomonBottomBarItem(
               icon: const Icon(
@@ -143,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return [
       HomeTab(),
       SearchScreen(),
-      VideoScreen(),
+      HistoryScreen(),
       BookingScreen(),
       SettingScreen(),
     ];

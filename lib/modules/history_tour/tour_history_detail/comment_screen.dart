@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timeago/timeago.dart' as tago;
 
-import '../../../dark_mode.dart';
 import '../../../shared/constants/app_style.dart';
 
 // ignore: must_be_immutable
@@ -20,7 +19,6 @@ class CommentTourScreen extends StatelessWidget {
 
   CommentTourController commentController = Get.put(CommentTourController());
   final HomeController homeController = Get.put(HomeController());
-  AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +26,7 @@ class CommentTourScreen extends StatelessWidget {
     commentController.updatePostId(id);
 
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor:  ColorConstants.lightBackground,
       body: SingleChildScrollView(
         child: SizedBox(
           width: size.width,
@@ -56,9 +52,7 @@ class CommentTourScreen extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   comment.comment,
-                                  style: appController.isDarkModeOn.value
-                                      ? AppStyles.white000Size14Fw400FfMont
-                                      : AppStyles.black000Size14Fw400FfMont,
+                                  style:  AppStyles.black000Size14Fw400FfMont,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -73,9 +67,7 @@ class CommentTourScreen extends StatelessWidget {
                                 ),
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: appController.isDarkModeOn.value
-                                      ? ColorConstants.gray400
-                                      : ColorConstants.kTextColor,
+                                  color: ColorConstants.kTextColor,
                                 ),
                               ),
                               const SizedBox(

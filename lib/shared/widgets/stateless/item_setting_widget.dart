@@ -4,14 +4,10 @@ import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 
-import '../../../dark_mode.dart';
 
 class ItemSettingWidget extends StatelessWidget {
-  final AppController appController = Get.find();
-
-  ItemSettingWidget({
+  const ItemSettingWidget({
     super.key,
     required this.title,
     this.description,
@@ -32,9 +28,7 @@ class ItemSettingWidget extends StatelessWidget {
       onTap: ontap ?? () {},
       child: Container(
         decoration: BoxDecoration(
-          color: appController.isDarkModeOn.value
-              ? ColorConstants.darkCard
-              : ColorConstants.white,
+          color: ColorConstants.white,
           borderRadius: BorderRadius.circular(getSize(12)),
         ),
         padding: EdgeInsets.symmetric(
@@ -56,9 +50,7 @@ class ItemSettingWidget extends StatelessWidget {
               child: SvgPicture.asset(
                 image,
                 colorFilter: ColorFilter.mode(
-                  appController.isDarkModeOn.value
-                      ? ColorConstants.white
-                      : ColorConstants.black,
+                  ColorConstants.black,
                   BlendMode.srcIn,
                 ),
               ),
@@ -73,10 +65,8 @@ class ItemSettingWidget extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: AppStyles.black000Size16Fw400FfMont.copyWith(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.white
-                            : ColorConstants.black),
+                    style: AppStyles.black000Size16Fw400FfMont
+                        .copyWith(color: ColorConstants.black),
                   ),
                   SizedBox(
                     height: getSize(4),
@@ -85,10 +75,7 @@ class ItemSettingWidget extends StatelessWidget {
                       ? Text(
                           description ?? '',
                           style: AppStyles.botTitle000Size12Fw400FfMont
-                              .copyWith(
-                                  color: appController.isDarkModeOn.value
-                                      ? ColorConstants.gray
-                                      : ColorConstants.botTitle),
+                              .copyWith(color: ColorConstants.botTitle),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
@@ -103,9 +90,7 @@ class ItemSettingWidget extends StatelessWidget {
                   child: SvgPicture.asset(
                     AssetHelper.icoNextRight,
                     colorFilter: ColorFilter.mode(
-                      appController.isDarkModeOn.value
-                          ? ColorConstants.primaryBackground
-                          : ColorConstants.titleSearch,
+                      ColorConstants.titleSearch,
                       BlendMode.srcIn,
                     ),
                     width: getSize(24),

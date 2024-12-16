@@ -1,11 +1,7 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class DiscoverScreen extends StatelessWidget {
-  DiscoverScreen({super.key});
-
-  final AppController appController = Get.find();
+  const DiscoverScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

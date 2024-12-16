@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doan_clean_achitec/models/history/history_model.dart';
-import 'package:doan_clean_achitec/modules/history_tour/tour_history_detail/preytty_qr_code.dart';
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
 import 'package:doan_clean_achitec/modules/home/home.dart';
-import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/constants/string_constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -55,13 +53,6 @@ class HistoryTourController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // ignore: non_const_call_to_literal_constructor
-    decoration = PrettyQrDecoration(
-      // ignore: non_const_call_to_literal_constructor
-      shape: PrettyQrSmoothSymbol(color: ColorConstants.green),
-      // ignore: invalid_use_of_visible_for_testing_member
-      image: PrettyQrSettings.kDefaultPrettyQrDecorationImage,
-    );
     getAllTourModelData();
   }
 
@@ -339,8 +330,8 @@ class HistoryTourController extends GetxController {
     }
   }
 
-  void indicatorRive() {
-    Future.delayed(
+  Future<void> indicatorRive() async {
+    await Future.delayed(
       const Duration(seconds: 1),
       () {
         if (getAllListHistory.value != null &&
@@ -359,9 +350,9 @@ class HistoryTourController extends GetxController {
     );
   }
 
-  void loadIndicatorRive() {
+  Future<void> loadIndicatorRive() async {
     isShowLoading.value = true;
-    indicatorRive();
+    await indicatorRive();
   }
 
   List<HistoryModel> sortToursHistoryByBookingDate(

@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/modules/profile/profile_controller.dart';
 import 'package:doan_clean_achitec/modules/rate/components/app_header.dart';
@@ -23,7 +23,7 @@ class RateScreen extends StatelessWidget {
   RateScreen({Key? key});
 
   var rating = 0.0;
-  final AppController appController = Get.find();
+
   final HomeController homeController = Get.find();
   final ProfileController profileController = Get.find();
 
@@ -32,14 +32,10 @@ class RateScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         titles: "Feedback".tr,
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkAppBar
-            : ColorConstants.primaryButton,
+        backgroundColor: ColorConstants.primaryButton,
         iconBgrColor: ColorConstants.grayTextField,
       ),
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -81,9 +77,7 @@ class RateScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   colorFilter: ColorFilter.mode(
-                                    appController.isDarkModeOn.value
-                                        ? ColorConstants.white
-                                        : ColorConstants.accent1,
+                                    ColorConstants.accent1,
                                     BlendMode.srcIn,
                                   ),
                                   image: const AssetImage(
@@ -106,9 +100,7 @@ class RateScreen extends StatelessWidget {
                     Text(
                       'How would you rate your recent tour?',
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.gray400
-                            : ColorConstants.kTextColor,
+                        color: ColorConstants.kTextColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 24,
                       ),

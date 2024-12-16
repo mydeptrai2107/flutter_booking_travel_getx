@@ -1,10 +1,9 @@
 // ignore_for_file: deprecated_member_use
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/shared/constants/assets_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 
 import '../constants/colors.dart';
 import 'icon_style.dart';
@@ -25,8 +24,6 @@ class BuildSettingsItem extends StatelessWidget {
   final bool? isDeleteColor;
   final bool? isIconLanguage;
   final Function()? onLongPress;
-
-  final AppController appController = Get.find();
 
   BuildSettingsItem({
     super.key,
@@ -78,9 +75,7 @@ class BuildSettingsItem extends StatelessWidget {
                         height: 18,
                         color: isDeleteColor == false
                             ? isDisableColor == false
-                                ? appController.isDarkModeOn.value
-                                    ? ColorConstants.lightAppBar
-                                    : ColorConstants.grey800
+                                ? ColorConstants.grey800
                                 : null
                             : ColorConstants.red,
                       )
@@ -114,9 +109,7 @@ class BuildSettingsItem extends StatelessWidget {
                 : isIconLanguage == false
                     ? SvgPicture.asset(
                         AssetHelper.icoNextRight,
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightAppBar
-                            : ColorConstants.gray600,
+                        color: ColorConstants.gray600,
                         width: 18,
                         height: 18,
                       )

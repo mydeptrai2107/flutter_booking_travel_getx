@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../dark_mode.dart';
 import '../../models/tour/tour_model.dart';
 
 // ignore: must_be_immutable
@@ -21,7 +20,6 @@ class OtpScreen extends StatelessWidget {
   final UserModel userModel = Get.arguments['arg1'];
   final TourModel tourModel = Get.arguments['arg2'];
   final String statusPayment = Get.arguments['arg3'];
-  final AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +37,7 @@ class OtpScreen extends StatelessWidget {
       ),
     );
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       appBar: CustomAppBar(
         titles: "Verification",
         iconBgrColor: ColorConstants.lightCard,
@@ -57,18 +53,14 @@ class OtpScreen extends StatelessWidget {
                 ),
                 Text(
                   "Enter the code to your number",
-                  style: appController.isDarkModeOn.value
-                      ? AppStyles.white000Size14Fw400FfMont
-                      : AppStyles.botTitle000Size14Fw400FfMont,
+                  style: AppStyles.botTitle000Size14Fw400FfMont,
                 ),
                 SizedBox(
                   height: getSize(24),
                 ),
                 Text(
                   userModel.phoneNub,
-                  style: appController.isDarkModeOn.value
-                      ? AppStyles.white000Size18Fw600FfMont
-                      : AppStyles.black000Size18Fw600FfMont,
+                  style: AppStyles.black000Size18Fw600FfMont,
                 ),
                 SizedBox(
                   height: getSize(60),
@@ -98,9 +90,7 @@ class OtpScreen extends StatelessWidget {
                   child: ElevatedButton(
                     child: Text(
                       "NEXT",
-                      style: appController.isDarkModeOn.value
-                          ? AppStyles.white000Size14Fw600FfMont
-                          : AppStyles.black000Size14Fw600FfMont,
+                      style: AppStyles.black000Size14Fw600FfMont,
                     ),
                     onPressed: () => _otpController.verifyOTP(
                       otp,

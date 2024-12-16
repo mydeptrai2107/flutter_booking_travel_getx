@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/modules/search/search_controller.dart';
 import 'package:doan_clean_achitec/modules/search/tab_search.dart';
 import 'package:doan_clean_achitec/modules/tour/tour.dart';
@@ -17,53 +16,48 @@ import '../../shared/widgets/stateful/search_widget.dart';
 class SearchScreen extends GetView<SearchDesController> {
   SearchScreen({super.key});
 
-  final AppController appController = Get.find();
   final TourController tourController = Get.put(TourController());
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => RefreshIndicator(
-        onRefresh: () async {
-          controller.getAllCityModelData();
-          controller.getHistoryCurrentTour();
-          controller.getHistoryCurrentDestination();
-          tourController.getAllTourModelData();
-        },
-        child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          backgroundColor: appController.isDarkModeOn.value
-              ? ColorConstants.darkBackground
-              : ColorConstants.lightBackground,
-          body: GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: getSize(24),
+    return RefreshIndicator(
+      onRefresh: () async {
+        controller.getAllCityModelData();
+        controller.getHistoryCurrentTour();
+        controller.getHistoryCurrentDestination();
+        tourController.getAllTourModelData();
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: ColorConstants.lightBackground,
+        body: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: getSize(24),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: SearchWidget(
+                    hintText: StringConst.searchDestinations.tr,
+                    textEditingController: controller.searchEditingController,
+                    focusNode: controller.focusNodeSearch,
+                    onChanged: (value) {
+                      controller.searchEditingController.addListener(() {
+                        controller.onFocusChange();
+                      });
+                      controller.getTourSearchAll(value);
+                    },
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: SearchWidget(
-                      hintText: StringConst.searchDestinations.tr,
-                      textEditingController: controller.searchEditingController,
-                      focusNode: controller.focusNodeSearch,
-                      onChanged: (value) {
-                        controller.searchEditingController.addListener(() {
-                          controller.onFocusChange();
-                        });
-                        controller.getTourSearchAll(value);
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    height: getSize(16),
-                  ),
-                  ListSearchTour(controller: controller),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: getSize(16),
+                ),
+                ListSearchTour(controller: controller),
+              ],
             ),
           ),
         ),
@@ -73,13 +67,12 @@ class SearchScreen extends GetView<SearchDesController> {
 }
 
 class ListSearchTour extends StatelessWidget {
-  ListSearchTour({
+  const ListSearchTour({
     super.key,
     required this.controller,
   });
 
   final SearchDesController controller;
-  final AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -216,11 +209,8 @@ class ListSearchTour extends StatelessWidget {
                                       alignment: Alignment.centerLeft,
                                       child: Text(
                                         StringConst.searchHistory.tr,
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size16Fw500FfMont
-                                            : AppStyles
-                                                .black000Size16Fw500FfMont,
+                                        style:
+                                            AppStyles.black000Size16Fw500FfMont,
                                       ),
                                     ),
                                     const Spacer(),
@@ -231,10 +221,8 @@ class ListSearchTour extends StatelessWidget {
                                         AssetHelper.icDelete,
                                         height: getSize(24),
                                         colorFilter: ColorFilter.mode(
-                                          appController.isDarkModeOn.value
-                                            ? ColorConstants.lightStatusBar
-                                            : ColorConstants.grey800!,
-                                            BlendMode.srcIn,
+                                          ColorConstants.grey800!,
+                                          BlendMode.srcIn,
                                         ),
                                       ),
                                     ),
@@ -263,17 +251,12 @@ class ListSearchTour extends StatelessWidget {
                                             },
                                             child: Chip(
                                               label: Text(data),
-                                              backgroundColor: appController
-                                                      .isDarkModeOn.value
-                                                  ? ColorConstants.darkCard
-                                                  : const Color(0xFFedf1f7),
+                                              backgroundColor:
+                                                  const Color(0xFFedf1f7),
                                               shape: RoundedRectangleBorder(
                                                 side: BorderSide(
-                                                  color: appController
-                                                          .isDarkModeOn.value
-                                                      ? ColorConstants.accent1
-                                                      : ColorConstants
-                                                          .lightStatusBar,
+                                                  color: ColorConstants
+                                                      .lightStatusBar,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
@@ -291,17 +274,12 @@ class ListSearchTour extends StatelessWidget {
                                             },
                                             child: Chip(
                                               label: Text(data),
-                                              backgroundColor: appController
-                                                      .isDarkModeOn.value
-                                                  ? ColorConstants.darkCard
-                                                  : const Color(0xFFedf1f7),
+                                              backgroundColor:
+                                                  const Color(0xFFedf1f7),
                                               shape: RoundedRectangleBorder(
                                                 side: BorderSide(
-                                                  color: appController
-                                                          .isDarkModeOn.value
-                                                      ? ColorConstants.accent1
-                                                      : ColorConstants
-                                                          .lightStatusBar,
+                                                  color: ColorConstants
+                                                      .lightStatusBar,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
@@ -320,9 +298,7 @@ class ListSearchTour extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           StringConst.searchMost.tr,
-                          style: appController.isDarkModeOn.value
-                              ? AppStyles.white000Size16Fw500FfMont
-                              : AppStyles.black000Size16Fw500FfMont,
+                          style: AppStyles.black000Size16Fw500FfMont,
                         ),
                       ),
                     ),
@@ -346,16 +322,10 @@ class ListSearchTour extends StatelessWidget {
                                     },
                                     child: Chip(
                                       label: Text(data.value ?? ''),
-                                      backgroundColor:
-                                          appController.isDarkModeOn.value
-                                              ? ColorConstants.darkCard
-                                              : const Color(0xFFedf1f7),
+                                      backgroundColor: const Color(0xFFedf1f7),
                                       shape: RoundedRectangleBorder(
                                         side: BorderSide(
-                                          color: appController
-                                                  .isDarkModeOn.value
-                                              ? ColorConstants.accent1
-                                              : ColorConstants.lightStatusBar,
+                                          color: ColorConstants.lightStatusBar,
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -374,10 +344,7 @@ class ListSearchTour extends StatelessWidget {
                                       backgroundColor: const Color(0xFFedf1f7),
                                       shape: RoundedRectangleBorder(
                                         side: BorderSide(
-                                          color: appController
-                                                  .isDarkModeOn.value
-                                              ? ColorConstants.accent1
-                                              : ColorConstants.lightStatusBar,
+                                          color: ColorConstants.lightStatusBar,
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(8.0),

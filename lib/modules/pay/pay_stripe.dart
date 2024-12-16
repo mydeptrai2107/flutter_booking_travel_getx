@@ -27,7 +27,7 @@ class PayStripeScreen extends GetView<PayController> {
       ),
       body: Center(
         child: TextButton(
-          child: const Text('Buy Now'),
+          child: const Text('Tiến hành thanh toán'),
           onPressed: () {
             controller.makePayment(
               bookingRequestController.totalPrice.value.toString(),

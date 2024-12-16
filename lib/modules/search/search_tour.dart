@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
 import 'package:doan_clean_achitec/modules/search/search.dart';
 import 'package:doan_clean_achitec/modules/tour/tour.dart';
@@ -21,7 +21,6 @@ import 'search_tour_controller.dart';
 class SearchTourScreen extends GetView<SearchTourController> {
   SearchTourScreen({super.key});
 
-  final AppController appController = Get.find();
   final SearchDesController searchDesController = Get.find();
   final String? dataSearch = Get.arguments;
   final TourController tourcontroller = Get.put(TourController());
@@ -34,230 +33,211 @@ class SearchTourScreen extends GetView<SearchTourController> {
       searchDesController.getTourSearch(dataSearch ?? "");
     });
 
-    return Obx(
-      () => RefreshIndicator(
-        onRefresh: () async {
-          searchDesController.getAllTourSearchData(dataSearch ?? "");
-          tourcontroller.getAllTourModelData();
-        },
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: SafeArea(
-            child: Scaffold(
-              resizeToAvoidBottomInset: true,
-              backgroundColor: appController.isDarkModeOn.value
-                  ? ColorConstants.darkBackground
-                  : ColorConstants.lightBackground,
-              body: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: getSize(16),
-                      ),
-                      SearchWidgetTour(
-                        hintText: StringConst.searchDestinations.tr,
-                        textEditingController:
-                            searchDesController.searchTourEditingController,
-                        focusNode: searchDesController.focusNodeSearchTour,
-                        onChanged: (value) {
-                          searchDesController.getTourSearch(value);
-                          searchDesController.searchTourEditingController.text =
-                              value;
-                        },
-                      ),
-                      SizedBox(
-                        height: getSize(16),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  _showDestination(context);
-                                },
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: getSize(8),
-                                    horizontal: getSize(12),
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      color: ColorConstants.gray500,
-                                      width: .5,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        StringConst.destination.tr,
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size13Fw400FfMont
-                                            : AppStyles
-                                                .black000Size13Fw400FfMont,
-                                      ),
-                                      SizedBox(
-                                        width: getSize(4),
-                                      ),
-                                      SvgPicture.asset(
-                                        AssetHelper.icArrowDown2,
-                                        width: getSize(18),
-                                        colorFilter: ColorFilter.mode(
-                                          appController.isDarkModeOn.value
-                                              ? ColorConstants.white
-                                              : ColorConstants.black,
-                                          BlendMode.srcIn,
-                                        ),
-                                      ),
-                                    ],
+    return RefreshIndicator(
+      onRefresh: () async {
+        searchDesController.getAllTourSearchData(dataSearch ?? "");
+        tourcontroller.getAllTourModelData();
+      },
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: SafeArea(
+          child: Scaffold(
+            resizeToAvoidBottomInset: true,
+            backgroundColor: ColorConstants.lightBackground,
+            body: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: getSize(16),
+                    ),
+                    SearchWidgetTour(
+                      hintText: StringConst.searchDestinations.tr,
+                      textEditingController:
+                          searchDesController.searchTourEditingController,
+                      focusNode: searchDesController.focusNodeSearchTour,
+                      onChanged: (value) {
+                        searchDesController.getTourSearch(value);
+                        searchDesController.searchTourEditingController.text =
+                            value;
+                      },
+                    ),
+                    SizedBox(
+                      height: getSize(16),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                _showDestination(context);
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: getSize(8),
+                                  horizontal: getSize(12),
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: ColorConstants.gray500,
+                                    width: .5,
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: getSize(12),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  _showTypeTour(context);
-                                },
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: getSize(8),
-                                    horizontal: getSize(12),
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      color: ColorConstants.gray500,
-                                      width: .5,
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      StringConst.destination.tr,
+                                      style:
+                                          AppStyles.black000Size13Fw400FfMont,
                                     ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Type tour",
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size13Fw400FfMont
-                                            : AppStyles
-                                                .black000Size13Fw400FfMont,
+                                    SizedBox(
+                                      width: getSize(4),
+                                    ),
+                                    SvgPicture.asset(
+                                      AssetHelper.icArrowDown2,
+                                      width: getSize(18),
+                                      colorFilter: ColorFilter.mode(
+                                        ColorConstants.black,
+                                        BlendMode.srcIn,
                                       ),
-                                      SizedBox(
-                                        width: getSize(4),
-                                      ),
-                                      SvgPicture.asset(
-                                        AssetHelper.icArrowDown2,
-                                        width: getSize(18),
-                                        colorFilter: ColorFilter.mode(
-                                          appController.isDarkModeOn.value
-                                              ? ColorConstants.white
-                                              : ColorConstants.black,
-                                          BlendMode.srcIn,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              SizedBox(
-                                width: getSize(12),
-                              ),
-                              GestureDetector(
-                                onTap: () async {
-                                  final result =
-                                      await Get.toNamed(Routes.SELECT_DATE);
-                                  if (result is List<DateTime?>) {
-                                    searchDesController.dateSelected.value =
-                                        '${result[0]?.getStartDate} - ${result[1]?.getEndDate}';
-                                    searchDesController.getDateSearch(
-                                      result[0] ?? DateTime.now(),
-                                      result[1] ?? DateTime.now(),
-                                    );
-                                  }
-                                },
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: getSize(8),
-                                    horizontal: getSize(12),
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      color: ColorConstants.gray500,
-                                      width: .5,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Date",
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size13Fw400FfMont
-                                            : AppStyles
-                                                .black000Size13Fw400FfMont,
-                                      ),
-                                      SizedBox(
-                                        width: getSize(4),
-                                      ),
-                                      SvgPicture.asset(
-                                        AssetHelper.icArrowDown2,
-                                        width: getSize(18),
-                                        colorFilter: ColorFilter.mode(
-                                          appController.isDarkModeOn.value
-                                              ? ColorConstants.white
-                                              : ColorConstants.black,
-                                          BlendMode.srcIn,
-                                        ),
-                                      ),
-                                    ],
+                            ),
+                            SizedBox(
+                              width: getSize(12),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _showTypeTour(context);
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: getSize(8),
+                                  horizontal: getSize(12),
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: ColorConstants.gray500,
+                                    width: .5,
                                   ),
                                 ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "Type tour",
+                                      style:
+                                          AppStyles.black000Size13Fw400FfMont,
+                                    ),
+                                    SizedBox(
+                                      width: getSize(4),
+                                    ),
+                                    SvgPicture.asset(
+                                      AssetHelper.icArrowDown2,
+                                      width: getSize(18),
+                                      colorFilter: ColorFilter.mode(
+                                        ColorConstants.black,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ],
-                          ),
+                            ),
+                            SizedBox(
+                              width: getSize(12),
+                            ),
+                            GestureDetector(
+                              onTap: () async {
+                                final result =
+                                    await Get.toNamed(Routes.SELECT_DATE);
+                                if (result is List<DateTime?>) {
+                                  searchDesController.dateSelected.value =
+                                      '${result[0]?.getStartDate} - ${result[1]?.getEndDate}';
+                                  searchDesController.getDateSearch(
+                                    result[0] ?? DateTime.now(),
+                                    result[1] ?? DateTime.now(),
+                                  );
+                                }
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: getSize(8),
+                                  horizontal: getSize(12),
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: ColorConstants.gray500,
+                                    width: .5,
+                                  ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "Date",
+                                      style:
+                                          AppStyles.black000Size13Fw400FfMont,
+                                    ),
+                                    SizedBox(
+                                      width: getSize(4),
+                                    ),
+                                    SvgPicture.asset(
+                                      AssetHelper.icArrowDown2,
+                                      width: getSize(18),
+                                      colorFilter: ColorFilter.mode(
+                                        ColorConstants.black,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(
-                        height: getSize(20),
-                      ),
-                      Obx(
-                        () => searchDesController
-                                .getAllTourSearch.value!.isNotEmpty
-                            ? SingleChildScrollView(
-                                child: ListView.builder(
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  itemCount: searchDesController
-                                          .getAllTourSearch.value?.length ??
-                                      2,
-                                  itemBuilder:
-                                      (BuildContext context, int rowIndex) {
-                                    return Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: getSize(12),
-                                      ),
-                                      child: buildItemTourSearch(
-                                        tourModel: searchDesController
-                                            .getAllTourSearch.value?[rowIndex],
-                                      ),
-                                    );
-                                  },
-                                ),
-                              )
-                            : const NoData(),
-                      ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: getSize(20),
+                    ),
+                    Obx(
+                      () => searchDesController
+                              .getAllTourSearch.value!.isNotEmpty
+                          ? SingleChildScrollView(
+                              child: ListView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                itemCount: searchDesController
+                                        .getAllTourSearch.value?.length ??
+                                    2,
+                                itemBuilder:
+                                    (BuildContext context, int rowIndex) {
+                                  return Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: getSize(12),
+                                    ),
+                                    child: buildItemTourSearch(
+                                      tourModel: searchDesController
+                                          .getAllTourSearch.value?[rowIndex],
+                                    ),
+                                  );
+                                },
+                              ),
+                            )
+                          : const NoData(),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -348,7 +328,6 @@ class buildItemTourSearch extends GetView<SearchDesController> {
     required this.tourModel,
   });
 
-  final AppController appController = Get.find();
   final SearchDesController searchDesController = Get.find();
 
   @override
@@ -369,9 +348,7 @@ class buildItemTourSearch extends GetView<SearchDesController> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: appController.isDarkModeOn.value
-              ? ColorConstants.darkCard
-              : ColorConstants.lightCard,
+          color: ColorConstants.lightCard,
         ),
         child: Column(
           children: [
@@ -430,9 +407,7 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
                     maxLines: 2,
-                    style: appController.isDarkModeOn.value
-                        ? AppStyles.white000Size16Fw500FfMont
-                        : AppStyles.black000Size16Fw500FfMont,
+                    style: AppStyles.black000Size16Fw500FfMont,
                   ),
                   SizedBox(
                     height: getSize(8),
@@ -455,9 +430,7 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: AppStyles.titleSearchSize14Fw400FfMont.copyWith(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.dividerColor
-                              : ColorConstants.botTitle,
+                          color: ColorConstants.botTitle,
                         ),
                       ),
                     ],
@@ -471,9 +444,7 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                         AssetHelper.icCalendar,
                         width: getSize(20),
                         colorFilter: ColorFilter.mode(
-                          appController.isDarkModeOn.value
-                            ? ColorConstants.dividerColor
-                            : ColorConstants.botTitle,
+                          ColorConstants.botTitle,
                           BlendMode.srcIn,
                         ),
                       ),
@@ -489,9 +460,7 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: AppStyles.titleSearchSize14Fw400FfMont.copyWith(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.dividerColor
-                              : ColorConstants.botTitle,
+                          color: ColorConstants.botTitle,
                         ),
                       ),
                     ],
@@ -505,9 +474,7 @@ class buildItemTourSearch extends GetView<SearchDesController> {
                         AssetHelper.icBuy,
                         width: getSize(20),
                         colorFilter: ColorFilter.mode(
-                          appController.isDarkModeOn.value
-                            ? ColorConstants.dividerColor
-                            : ColorConstants.botTitle,
+                          ColorConstants.botTitle,
                           BlendMode.srcIn,
                         ),
                       ),

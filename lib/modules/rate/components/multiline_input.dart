@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/modules/profile/edit_profile.dart';
 import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/constants/string_constants.dart';
@@ -12,16 +11,12 @@ class MultilineInput extends StatelessWidget {
     super.key,
   });
 
-  final AppController appController = Get.find();
-
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(kDefaultPadding),
       decoration: BoxDecoration(
-        color: appController.isDarkModeOn.value
-            ? ColorConstants.darkCard
-            : ColorConstants.lightCard,
+        color: ColorConstants.lightCard,
         borderRadius: BorderRadius.circular(12.0),
         boxShadow: [
           BoxShadow(

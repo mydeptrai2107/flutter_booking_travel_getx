@@ -53,9 +53,7 @@ class CategoryBar extends StatelessWidget {
                           borderRadius: kSmallBorderRadius,
                         )
                       : BoxDecoration(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.darkCard
-                              : ColorConstants.lightCard,
+                          color: ColorConstants.lightCard,
                           borderRadius: kSmallBorderRadius,
                         ),
                   child: Text(
@@ -65,9 +63,7 @@ class CategoryBar extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       color: homeController.categoryIndex.value == index
                           ? ColorConstants.white
-                          : appController.isDarkModeOn.value
-                              ? ColorConstants.lightCard
-                              : ColorConstants.black,
+                          : ColorConstants.black,
                     ),
                   ),
                 ),

@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timeago/timeago.dart' as tago;
 
-import '../../../../dark_mode.dart';
 import '../../../../shared/constants/app_style.dart';
 import '../controllers/comment_controller.dart';
 
@@ -19,7 +18,6 @@ class CommentScreen extends StatelessWidget {
 
   CommentController commentController = Get.put(CommentController());
   final HomeController homeController = Get.put(HomeController());
-  AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +25,7 @@ class CommentScreen extends StatelessWidget {
     commentController.updatePostId(id);
 
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       body: SingleChildScrollView(
         child: SizedBox(
           width: size.width,
@@ -56,9 +52,7 @@ class CommentScreen extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   comment.comment,
-                                  style: appController.isDarkModeOn.value
-                                      ? AppStyles.white000Size14Fw400FfMont
-                                      : AppStyles.black000Size14Fw400FfMont,
+                                  style: AppStyles.black000Size14Fw400FfMont,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -73,9 +67,7 @@ class CommentScreen extends StatelessWidget {
                                 ),
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: appController.isDarkModeOn.value
-                                      ? ColorConstants.gray400
-                                      : ColorConstants.kTextColor,
+                                  color:  ColorConstants.kTextColor,
                                 ),
                               ),
                               const SizedBox(
@@ -85,9 +77,7 @@ class CommentScreen extends StatelessWidget {
                                 '${comment.likes.length} likes',
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: appController.isDarkModeOn.value
-                                      ? ColorConstants.gray400
-                                      : ColorConstants.kTextColor,
+                                  color: ColorConstants.kTextColor,
                                 ),
                               )
                             ],
@@ -114,17 +104,13 @@ class CommentScreen extends StatelessWidget {
                   controller: commentController.commentEditingController,
                   style: TextStyle(
                     fontSize: 16,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.gray400
-                        : ColorConstants.kTextColor,
+                    color: ColorConstants.kTextColor,
                   ),
                   decoration: InputDecoration(
                     labelText: StringConst.comment.tr,
                     labelStyle: TextStyle(
                       fontSize: 20,
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.gray400
-                          : ColorConstants.kTextColor,
+                      color: ColorConstants.kTextColor,
                       fontWeight: FontWeight.w700,
                     ),
                     enabledBorder: const UnderlineInputBorder(
@@ -151,9 +137,7 @@ class CommentScreen extends StatelessWidget {
                     StringConst.send.tr,
                     style: TextStyle(
                       fontSize: 16,
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.gray400
-                          : ColorConstants.kTextColor,
+                      color: ColorConstants.kTextColor,
                     ),
                   ),
                 ),

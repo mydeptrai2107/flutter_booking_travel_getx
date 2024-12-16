@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/modules/booking/booking.dart';
 import 'package:doan_clean_achitec/modules/tour/tour.dart';
 import 'package:doan_clean_achitec/shared/constants/app_style.dart';
@@ -19,7 +18,7 @@ class TourScreen extends GetView<TourController> {
   TourScreen({super.key});
 
   final BookingController bookingController = Get.find();
-  final AppController appController = Get.find();
+
   IconData? iconHeart = FontAwesomeIcons.solidHeart;
 
   @override
@@ -32,13 +31,9 @@ class TourScreen extends GetView<TourController> {
     String? selectedValue = StringConst.popular.tr;
 
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       appBar: CustomAppBar(
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkAppBar
-            : ColorConstants.primaryButton,
+        backgroundColor: ColorConstants.primaryButton,
         iconBgrColor: ColorConstants.lightAppBar,
         onTap: () {
           controller.focusSearchScreen.unfocus();
@@ -117,17 +112,12 @@ class TourScreen extends GetView<TourController> {
                                   boxShadow: const [],
                                   color: controller.isCheckSearch.value
                                       ? ColorConstants.primaryButton
-                                      : appController.isDarkModeOn.value
-                                          ? ColorConstants.darkCard
-                                          : ColorConstants.lightCard,
+                                      : ColorConstants.lightCard,
                                 ),
                                 alignment: Alignment.center,
                                 child: Text(
                                   StringConst.city.tr,
-                                  style: appController.isDarkModeOn.value ||
-                                          controller.isCheckSearch.value
-                                      ? AppStyles.white000Size18Fw500FfMont
-                                      : AppStyles.black000Size18Fw500FfMont,
+                                  style: AppStyles.black000Size18Fw500FfMont,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -156,18 +146,13 @@ class TourScreen extends GetView<TourController> {
                                   ),
                                   boxShadow: const [],
                                   color: controller.isCheckSearch.value
-                                      ? appController.isDarkModeOn.value
-                                          ? ColorConstants.darkCard
-                                          : ColorConstants.lightCard
+                                      ? ColorConstants.lightCard
                                       : ColorConstants.primaryButton,
                                 ),
                                 alignment: Alignment.center,
                                 child: Text(
                                   StringConst.all.tr,
-                                  style: appController.isDarkModeOn.value ||
-                                          !controller.isCheckSearch.value
-                                      ? AppStyles.white000Size18Fw500FfMont
-                                      : AppStyles.black000Size18Fw500FfMont,
+                                  style: AppStyles.black000Size18Fw500FfMont,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -184,10 +169,8 @@ class TourScreen extends GetView<TourController> {
                       children: [
                         Text(
                           StringConst.filter.tr,
-                          style: AppStyles.black000Size18Fw500FfMont.copyWith(
-                              color: appController.isDarkModeOn.value
-                                  ? ColorConstants.lightBackground
-                                  : ColorConstants.black),
+                          style: AppStyles.black000Size18Fw500FfMont
+                              .copyWith(color: ColorConstants.black),
                         ),
                         DropdownButtonHideUnderline(
                           child: DropdownButton2<String>(
@@ -200,9 +183,7 @@ class TourScreen extends GetView<TourController> {
                                     style: AppStyles
                                         .titleSearchSize16Fw400FfMont
                                         .copyWith(
-                                      color: appController.isDarkModeOn.value
-                                          ? ColorConstants.lightBackground
-                                          : ColorConstants.titleSearch,
+                                      color: ColorConstants.titleSearch,
                                     ),
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -217,12 +198,8 @@ class TourScreen extends GetView<TourController> {
                                         style: AppStyles
                                             .titleSearchSize14Fw400FfMont
                                             .copyWith(
-                                                color: appController
-                                                        .isDarkModeOn.value
-                                                    ? ColorConstants
-                                                        .lightBackground
-                                                    : ColorConstants
-                                                        .titleSearch),
+                                                color:
+                                                    ColorConstants.titleSearch),
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                     ))
@@ -249,9 +226,7 @@ class TourScreen extends GetView<TourController> {
                                   getSize(8),
                                 ),
                                 boxShadow: const [],
-                                color: appController.isDarkModeOn.value
-                                    ? ColorConstants.darkCard
-                                    : ColorConstants.white,
+                                color: ColorConstants.white,
                               ),
                               elevation: 2,
                             ),
@@ -260,35 +235,25 @@ class TourScreen extends GetView<TourController> {
                                 AssetHelper.icFilter,
                                 width: getSize(24),
                                 colorFilter: ColorFilter.mode(
-                                  appController.isDarkModeOn.value
-                                      ? ColorConstants.lightBackground
-                                      : ColorConstants.titleSearch,
+                                  ColorConstants.titleSearch,
                                   BlendMode.srcIn,
                                 ),
                               ),
-                              iconEnabledColor: appController.isDarkModeOn.value
-                                  ? ColorConstants.lightBackground
-                                  : ColorConstants.botTitle,
-                              iconDisabledColor:
-                                  appController.isDarkModeOn.value
-                                      ? ColorConstants.lightBackground
-                                      : Colors.grey,
+                              iconEnabledColor: ColorConstants.botTitle,
+                              iconDisabledColor: Colors.grey,
                             ),
                             dropdownStyleData: DropdownStyleData(
                               maxHeight: getSize(200),
                               width: getSize(200),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(14),
-                                color: appController.isDarkModeOn.value
-                                    ? ColorConstants.darkCard
-                                    : ColorConstants.white,
+                                color: ColorConstants.white,
                               ),
                               offset: const Offset(-20, 0),
                               scrollbarTheme: ScrollbarThemeData(
                                 radius: const Radius.circular(40),
                                 thickness: WidgetStateProperty.all(6),
-                                thumbVisibility:
-                                    WidgetStateProperty.all(true),
+                                thumbVisibility: WidgetStateProperty.all(true),
                               ),
                             ),
                             menuItemStyleData: MenuItemStyleData(

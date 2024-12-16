@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/routes/app_pages.dart';
 import 'package:doan_clean_achitec/shared/shared.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +13,6 @@ class HotelItemWidget extends StatelessWidget {
     super.key,
   });
 
-  final AppController appController = Get.find();
-
   @override
   Widget build(BuildContext context) {
     bool isFavor = false;
@@ -24,9 +21,7 @@ class HotelItemWidget extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width / 1.4,
         decoration: BoxDecoration(
-          color: appController.isDarkModeOn.value
-              ? ColorConstants.darkCard
-              : ColorConstants.grayTextField,
+          color: ColorConstants.grayTextField,
           borderRadius: BorderRadius.circular(getSize(14)),
         ),
         margin: EdgeInsets.only(bottom: getSize(16)),
@@ -93,9 +88,7 @@ class HotelItemWidget extends StatelessWidget {
                   Text(
                     "Royal Palm Heritage",
                     style: AppStyles.botTitle000Size20Fw500FfMont.copyWith(
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.lightBackground
-                          : ColorConstants.botTitle,
+                      color: ColorConstants.botTitle,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -114,20 +107,14 @@ class HotelItemWidget extends StatelessWidget {
                         ),
                         TextSpan(
                           text: "  Purwokerto, Jateng - ",
-                          style:
-                              AppStyles.botTitle000Size14Fw400FfMont.copyWith(
-                            color: appController.isDarkModeOn.value
-                                ? ColorConstants.lightBackground
-                                : ColorConstants.botTitle,
-                          ),
+                          style: AppStyles.botTitle000Size14Fw400FfMont
+                              .copyWith(color: ColorConstants.botTitle),
                         ),
                         TextSpan(
                           text: "364 m from destination",
                           style:
                               AppStyles.titleSearchSize12Fw400FfMont.copyWith(
-                            color: appController.isDarkModeOn.value
-                                ? ColorConstants.lightBackground
-                                : ColorConstants.titleSearch,
+                            color: ColorConstants.titleSearch,
                           ),
                         ),
                       ],
@@ -150,9 +137,7 @@ class HotelItemWidget extends StatelessWidget {
                       Text(
                         "4.5",
                         style: AppStyles.botTitle000Size14Fw400FfMont.copyWith(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.gray
-                              : ColorConstants.botTitle,
+                          color: ColorConstants.botTitle,
                         ),
                       ),
                       SizedBox(
@@ -161,9 +146,7 @@ class HotelItemWidget extends StatelessWidget {
                       Text(
                         "(3241 reviews)",
                         style: AppStyles.graySecondSize14Fw400FfMont.copyWith(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.gray
-                              : ColorConstants.graySecond,
+                          color: ColorConstants.graySecond,
                         ),
                       ),
                     ],
@@ -177,21 +160,15 @@ class HotelItemWidget extends StatelessWidget {
                         TextSpan(
                           text: "\$143",
                           style: TextStyle(
-                            color: appController.isDarkModeOn.value
-                                ? ColorConstants.lightBackground
-                                : ColorConstants.botTitle,
+                            color: ColorConstants.botTitle,
                             fontSize: 24,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         TextSpan(
                           text: StringConst.night.tr,
-                          style:
-                              AppStyles.botTitle000Size14Fw400FfMont.copyWith(
-                            color: appController.isDarkModeOn.value
-                                ? ColorConstants.lightBackground
-                                : ColorConstants.botTitle,
-                          ),
+                          style: AppStyles.botTitle000Size14Fw400FfMont
+                              .copyWith(color: ColorConstants.botTitle),
                         ),
                       ],
                     ),

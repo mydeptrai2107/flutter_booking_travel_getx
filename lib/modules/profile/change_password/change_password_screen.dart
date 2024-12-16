@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/modules/profile/change_password/change_password_controller.dart';
 import 'package:doan_clean_achitec/modules/profile/profile_controller.dart';
 import 'package:doan_clean_achitec/shared/constants/assets_helper.dart';
@@ -17,21 +16,16 @@ import '../../../shared/widgets/my_button.dart';
 class ChangePasswordScreen extends GetView<ChangePasswordController> {
   ChangePasswordScreen({super.key});
 
-  final AppController appController = Get.find();
   final ProfileController profileController = Get.find();
   final GlobalKey<FormState> changePassWord = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       appBar: CustomAppBar(
         titles: StringConst.changePassword.tr,
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkAppBar
-            : ColorConstants.primaryButton,
+        backgroundColor: ColorConstants.primaryButton,
         iconBgrColor: ColorConstants.grayTextField,
       ),
       body: SafeArea(
@@ -52,9 +46,7 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
                       Text(
                         StringConst.oldPassword.tr,
                         style: TextStyle(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.lightBackground
-                              : ColorConstants.graySub,
+                          color: ColorConstants.graySub,
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                         ),
@@ -109,9 +101,7 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
                       Text(
                         StringConst.newPassword.tr,
                         style: TextStyle(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.lightBackground
-                              : ColorConstants.graySub,
+                          color: ColorConstants.graySub,
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                         ),
@@ -166,9 +156,7 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
                       Text(
                         StringConst.confirmNewPassword.tr,
                         style: TextStyle(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.lightBackground
-                              : ColorConstants.graySub,
+                          color: ColorConstants.graySub,
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                         ),

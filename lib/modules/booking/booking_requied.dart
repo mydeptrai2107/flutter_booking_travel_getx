@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
 import 'package:doan_clean_achitec/modules/booking/booking_request.dart';
 import 'package:doan_clean_achitec/routes/app_pages.dart';
@@ -14,15 +13,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
   BookingRequiedScreen({super.key});
 
   final TourModel? tourModel = Get.arguments;
-  AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     controller.setPrice(tourModel?.price ?? 0);
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightStatusBar,
+      backgroundColor:  ColorConstants.lightStatusBar,
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: EdgeInsets.only(
@@ -42,9 +38,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                 left: getSize(24),
               ),
               decoration: BoxDecoration(
-                color: appController.isDarkModeOn.value
-                    ? ColorConstants.darkCard
-                    : ColorConstants.lightCard,
+                color: ColorConstants.lightCard,
                 borderRadius: BorderRadius.circular(
                   getSize(8),
                 ),
@@ -53,9 +47,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                 children: [
                   Text(
                     tourModel?.nameTour ?? '',
-                    style: appController.isDarkModeOn.value
-                        ? AppStyles.white000Size18Fw600FfMont
-                        : AppStyles.black000Size18Fw600FfMont,
+                    style: AppStyles.black000Size18Fw600FfMont,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,
@@ -63,9 +55,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                   SizedBox(height: getSize(16)),
                   Text(
                     "${StringConst.startAt.tr} ${tourModel?.duration ?? 'Hotel'}",
-                    style: appController.isDarkModeOn.value
-                        ? AppStyles.white000Size14Fw400FfMont
-                        : AppStyles.black000Size14Fw400FfMont,
+                    style: AppStyles.black000Size14Fw400FfMont,
                   ),
                   SizedBox(height: getSize(16)),
                   Row(
@@ -73,15 +63,11 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                     children: [
                       Text(
                         '${StringConst.price.tr}:',
-                        style: appController.isDarkModeOn.value
-                            ? AppStyles.white000Size14Fw400FfMont
-                            : AppStyles.black000Size14Fw400FfMont,
+                        style:  AppStyles.black000Size14Fw400FfMont,
                       ),
                       Text(
                         'VND ${tourModel?.price}',
-                        style: appController.isDarkModeOn.value
-                            ? AppStyles.white000Size16Fw500FfMont
-                            : AppStyles.black000Size16Fw500FfMont,
+                        style:  AppStyles.black000Size16Fw500FfMont,
                       ),
                     ],
                   ),
@@ -90,9 +76,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                   ),
                   Text(
                     StringConst.serviceExcluded.tr,
-                    style: appController.isDarkModeOn.value
-                        ? AppStyles.white000Size18Fw500FfMont
-                        : AppStyles.black000Size18Fw500FfMont,
+                    style:  AppStyles.black000Size18Fw500FfMont,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,
@@ -107,9 +91,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                   padding: EdgeInsets.only(bottom: getSize(16)),
                                   child: Text(
                                     e,
-                                    style: appController.isDarkModeOn.value
-                                        ? AppStyles.white000Size14Fw400FfMont
-                                        : AppStyles.black000Size14Fw400FfMont,
+                                    style: AppStyles.black000Size14Fw400FfMont,
                                   ),
                                 ),
                               )
@@ -117,175 +99,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                         )
                       : Text(
                           StringConst.noData.tr,
-                          style: appController.isDarkModeOn.value
-                              ? AppStyles.white000Size14Fw400FfMont
-                              : AppStyles.black000Size14Fw400FfMont,
+                          style: AppStyles.black000Size14Fw400FfMont,
                         ),
                   SizedBox(height: getSize(32)),
                   Text(
-                    StringConst.paymentMethod.tr,
-                    style: appController.isDarkModeOn.value
-                        ? AppStyles.white000Size18Fw500FfMont
-                        : AppStyles.black000Size18Fw500FfMont,
-                  ),
-                  SizedBox(height: getSize(24)),
-                  Obx(
-                    () => Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: GestureDetector(
-                            onTap: () => controller.setStatusQRcode(),
-                            child: Container(
-                              padding: EdgeInsets.all(
-                                getSize(10),
-                              ),
-                              decoration: BoxDecoration(
-                                color: controller.isCheckQR.value
-                                    ? ColorConstants.primaryButton
-                                    : ColorConstants.grayTextField,
-                                borderRadius: BorderRadius.circular(
-                                  getSize(16),
-                                ),
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SvgPicture.asset(
-                                    AssetHelper.icScan,
-                                    height: getSize(36),
-                                    width: getSize(36),
-                                    colorFilter: ColorFilter.mode(
-                                      controller.isCheckQR.value
-                                          ? ColorConstants.white
-                                          : ColorConstants.titleSearch,
-                                      BlendMode.srcIn,
-                                    ),
-                                  ),
-                                  SizedBox(height: getSize(28)),
-                                  Text(
-                                    StringConst.qrCode.tr,
-                                    style: controller.isCheckQR.value
-                                        ? AppStyles.white000Size12Fw400FfMont
-                                        : AppStyles.black000Size12Fw400FfMont,
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                    softWrap: false,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: getSize(20),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: GestureDetector(
-                            onTap: () => controller.setStatusBanking(),
-                            child: Container(
-                              padding: EdgeInsets.all(
-                                getSize(10),
-                              ),
-                              decoration: BoxDecoration(
-                                color: controller.isCheckBanking.value
-                                    ? ColorConstants.primaryButton
-                                    : ColorConstants.grayTextField,
-                                borderRadius: BorderRadius.circular(
-                                  getSize(16),
-                                ),
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SvgPicture.asset(
-                                    AssetHelper.icDocument,
-                                    height: getSize(36),
-                                    width: getSize(36),
-                                    colorFilter: ColorFilter.mode(
-                                      controller.isCheckQR.value
-                                          ? ColorConstants.lightCard!
-                                          : ColorConstants.darkAppBar,
-                                      BlendMode.srcIn,
-                                    ),
-                                  ),
-                                  SizedBox(height: getSize(28)),
-                                  Text(
-                                    StringConst.banking.tr,
-                                    style: controller.isCheckBanking.value
-                                        ? AppStyles.white000Size12Fw400FfMont
-                                        : AppStyles.black000Size12Fw400FfMont,
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                    softWrap: false,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: getSize(20),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: GestureDetector(
-                            onTap: () => controller.setStatusVisaCard(),
-                            child: Container(
-                              padding: EdgeInsets.all(
-                                getSize(10),
-                              ),
-                              decoration: BoxDecoration(
-                                color: controller.isVisaCard.value
-                                    ? ColorConstants.primaryButton
-                                    : ColorConstants.grayTextField,
-                                borderRadius: BorderRadius.circular(
-                                  getSize(16),
-                                ),
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SvgPicture.asset(
-                                    AssetHelper.icWallet,
-                                    height: getSize(36),
-                                    width: getSize(36),
-                                    colorFilter: ColorFilter.mode(
-                                      controller.isCheckQR.value
-                                          ? ColorConstants.lightCard!
-                                          : ColorConstants.darkAppBar,
-                                      BlendMode.srcIn,
-                                    ),
-                                  ),
-                                  SizedBox(height: getSize(28)),
-                                  Text(
-                                    StringConst.cash.tr,
-                                    style: controller.isVisaCard.value
-                                        ? AppStyles.white000Size12Fw400FfMont
-                                        : AppStyles.black000Size12Fw400FfMont,
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                    softWrap: false,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: getSize(48)),
-                  Text(
                     StringConst.choosePeople.tr,
-                    style: appController.isDarkModeOn.value
-                        ? AppStyles.white000Size18Fw500FfMont
-                        : AppStyles.black000Size18Fw500FfMont,
+                    style: AppStyles.black000Size18Fw500FfMont,
                   ),
                   SizedBox(height: getSize(24)),
                   Padding(
@@ -303,16 +122,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                               children: [
                                 Text(
                                   StringConst.adult.tr,
-                                  style: appController.isDarkModeOn.value
-                                      ? AppStyles.white000Size14Fw500FfMont
-                                      : AppStyles.black000Size14Fw500FfMont,
+                                  style:  AppStyles.black000Size14Fw500FfMont,
                                 ),
                                 SizedBox(height: getSize(4)),
                                 Text(
                                   StringConst.from141cmtall.tr,
-                                  style: appController.isDarkModeOn.value
-                                      ? AppStyles.white000Size12Fw400FfMont
-                                      : AppStyles.black000Size12Fw400FfMont,
+                                  style: AppStyles.black000Size12Fw400FfMont,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
                                   softWrap: false,
@@ -323,19 +138,13 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: 'VND ',
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size12Fw400FfMont
-                                            : AppStyles
+                                        style: AppStyles
                                                 .black000Size12Fw400FfMont,
                                       ),
                                       TextSpan(
                                         text:
                                             '${controller.adultPrice.toInt()}',
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size14Fw500FfMont
-                                            : AppStyles
+                                        style: AppStyles
                                                 .blue000Size14Fw500FfMont,
                                       ),
                                     ],
@@ -368,9 +177,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     child: Text(
                                       "${controller.adultNumb.toInt()}",
                                       textAlign: TextAlign.center,
-                                      style: appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size16Fw400FfMont
-                                          : AppStyles.black000Size16Fw400FfMont,
+                                      style:  AppStyles.black000Size16Fw400FfMont,
                                     ),
                                   ),
                                   SizedBox(width: getSize(10)),
@@ -407,16 +214,12 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                               children: [
                                 Text(
                                   StringConst.children.tr,
-                                  style: appController.isDarkModeOn.value
-                                      ? AppStyles.white000Size14Fw500FfMont
-                                      : AppStyles.black000Size14Fw500FfMont,
+                                  style: AppStyles.black000Size14Fw500FfMont,
                                 ),
                                 SizedBox(height: getSize(4)),
                                 Text(
                                   StringConst.to140cmtallorless.tr,
-                                  style: appController.isDarkModeOn.value
-                                      ? AppStyles.white000Size12Fw400FfMont
-                                      : AppStyles.black000Size12Fw400FfMont,
+                                  style:  AppStyles.black000Size12Fw400FfMont,
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
                                   softWrap: false,
@@ -427,19 +230,13 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: 'VND ',
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size12Fw400FfMont
-                                            : AppStyles
+                                        style: AppStyles
                                                 .black000Size12Fw400FfMont,
                                       ),
                                       TextSpan(
                                         text:
                                             '${controller.childrenPrice.toInt()}',
-                                        style: appController.isDarkModeOn.value
-                                            ? AppStyles
-                                                .white000Size14Fw500FfMont
-                                            : AppStyles
+                                        style:  AppStyles
                                                 .blue000Size14Fw500FfMont,
                                       ),
                                     ],
@@ -472,9 +269,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                                     child: Text(
                                       "${controller.childrenNumb.toInt()}",
                                       textAlign: TextAlign.center,
-                                      style: appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size16Fw400FfMont
-                                          : AppStyles.black000Size16Fw400FfMont,
+                                      style:AppStyles.black000Size16Fw400FfMont,
                                     ),
                                   ),
                                   SizedBox(width: getSize(10)),
@@ -514,9 +309,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                   child: SvgPicture.asset(
                     AssetHelper.icCloseSquare,
                     colorFilter: ColorFilter.mode(
-                      appController.isDarkModeOn.value
-                          ? ColorConstants.gray400
-                          : ColorConstants.grey800!,
+                       ColorConstants.grey800!,
                       BlendMode.srcIn,
                     ),
                   ),
@@ -540,9 +333,7 @@ class BookingRequiedScreen extends GetView<BookingRequestController> {
                           ),
                           TextSpan(
                             text: 'VND ',
-                            style: appController.isDarkModeOn.value
-                                ? AppStyles.white000Size14Fw400FfMont
-                                : AppStyles.black000Size14Fw400FfMont,
+                            style: AppStyles.black000Size14Fw400FfMont,
                           ),
                         ],
                       ),

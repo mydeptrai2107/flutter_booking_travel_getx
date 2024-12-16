@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/routes/app_pages.dart';
 import 'package:doan_clean_achitec/shared/shared.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +13,6 @@ class HotelItemVerticalWidget extends StatelessWidget {
     super.key,
   });
 
-  final AppController appController = Get.find();
-
   @override
   Widget build(BuildContext context) {
     bool isFavor = false;
@@ -24,9 +21,7 @@ class HotelItemVerticalWidget extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width - getSize(40),
         decoration: BoxDecoration(
-          color: appController.isDarkModeOn.value
-              ? ColorConstants.darkCard
-              : ColorConstants.lightCard,
+          color: ColorConstants.lightCard,
           borderRadius: BorderRadius.circular(getSize(14)),
         ),
         margin: EdgeInsets.only(bottom: getSize(16)),
@@ -99,9 +94,7 @@ class HotelItemVerticalWidget extends StatelessWidget {
                     Text(
                       "Royal Palm Heritage",
                       style: AppStyles.botTitle000Size20Fw500FfMont.copyWith(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightBackground
-                            : ColorConstants.botTitle,
+                        color: ColorConstants.botTitle,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,

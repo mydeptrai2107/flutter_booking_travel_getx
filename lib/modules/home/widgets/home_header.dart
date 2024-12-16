@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/modules/profile/profile_controller.dart';
 import 'package:doan_clean_achitec/routes/app_pages.dart';
@@ -21,7 +21,6 @@ class HomeHeader extends StatelessWidget {
   final String? titleCenter;
   final bool? avatar;
 
-  final AppController appController = Get.find();
   final HomeController homeController = Get.find();
   final ProfileController profileController = Get.put(ProfileController());
 
@@ -43,9 +42,7 @@ class HomeHeader extends StatelessWidget {
                   child: Icon(
                     FontAwesomeIcons.bars,
                     size: getSize(kTop26Padding),
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.white
-                        : Colors.black87,
+                    color: Colors.black87,
                   ),
                 ),
               ),
@@ -54,9 +51,7 @@ class HomeHeader extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.white
-                        : ColorConstants.black),
+                    color: ColorConstants.black),
               ),
               avatar != null
                   ? GestureDetector(
@@ -83,9 +78,7 @@ class HomeHeader extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     colorFilter: ColorFilter.mode(
-                                      appController.isDarkModeOn.value
-                                          ? ColorConstants.white
-                                          : ColorConstants.accent1,
+                                      ColorConstants.accent1,
                                       BlendMode.srcIn,
                                     ),
                                     image: const AssetImage(

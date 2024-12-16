@@ -4,7 +4,6 @@ import 'package:doan_clean_achitec/modules/booking/booking_option/booking_option
 import 'package:doan_clean_achitec/modules/booking/booking_option/booking_payment.dart';
 import 'package:doan_clean_achitec/modules/history_tour/history_tour_binding.dart';
 import 'package:doan_clean_achitec/modules/history_tour/tour_history_detail/comment_screen.dart';
-import 'package:doan_clean_achitec/modules/history_tour/tour_history_detail/tour_qr_code_detail.dart';
 import 'package:doan_clean_achitec/modules/booking/booking.dart';
 import 'package:doan_clean_achitec/modules/booking/booking_requied.dart';
 import 'package:doan_clean_achitec/modules/detail_place/detail_place.dart';
@@ -167,11 +166,6 @@ class AppPages {
     GetPage(
       name: Routes.HISTORY_TOUR_SCREEN,
       page: () => HistoryScreen(),
-      binding: HomeBinding(),
-    ),
-    GetPage(
-      name: Routes.TOUR_QR_CODE_DETAIL,
-      page: () => TourQRCodeDetail(),
       binding: HomeBinding(),
     ),
     GetPage(

@@ -2,7 +2,7 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/modules/favorite/favorite_controller.dart';
 import 'package:doan_clean_achitec/modules/history_tour/tour_history_detail/comment_controller.dart';
 import 'package:doan_clean_achitec/modules/history_tour/tour_history_detail/comment_see_screen.dart';
@@ -32,7 +32,7 @@ class TourDetailsScreen extends StatelessWidget {
   TourDetailsScreen({Key? key}) : super(key: key);
   final TourController tourController = Get.find();
   final TourModel tourModel = Get.arguments;
-  final AppController appController = Get.find();
+
   final int selectedIndex = 0;
   CommentTourController commentController = Get.put(CommentTourController());
   final HomeController homeController = Get.put(HomeController());
@@ -44,9 +44,7 @@ class TourDetailsScreen extends StatelessWidget {
         favoriteController.isCheckFavouriteTour(tourModel.idTour ?? "");
 
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -134,9 +132,7 @@ class TourDetailsScreen extends StatelessWidget {
                 padding:
                     EdgeInsets.symmetric(horizontal: getSize(kMediumPadding)),
                 decoration: BoxDecoration(
-                  color: appController.isDarkModeOn.value
-                      ? ColorConstants.darkBackground
-                      : ColorConstants.lightBackground,
+                  color: ColorConstants.lightBackground,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(kDefaultPadding * 2),
                     topRight: Radius.circular(kDefaultPadding * 2),
@@ -239,9 +235,7 @@ class TourDetailsScreen extends StatelessWidget {
           style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
-              color: appController.isDarkModeOn.value
-                  ? ColorConstants.lightBackground
-                  : ColorConstants.darkBackground),
+              color: ColorConstants.darkBackground),
         ),
         SizedBox(height: getSize(kPadding)),
         Row(
@@ -271,9 +265,7 @@ class TourDetailsScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.lightBackground
-                        : ColorConstants.botTitle,
+                    color: ColorConstants.botTitle,
                   ),
                 ),
                 Text(
@@ -293,9 +285,7 @@ class TourDetailsScreen extends StatelessWidget {
           )} - ${tourController.formatTimeStampEndToString(
             tourModel?.endDate ?? Timestamp.now(),
           )}",
-          style: appController.isDarkModeOn.value
-              ? AppStyles.white000Size14Fw500FfMont
-              : AppStyles.black000Size14Fw500FfMont,
+          style: AppStyles.black000Size14Fw500FfMont,
         ),
       ],
     );
@@ -320,9 +310,7 @@ class TourDetailsScreen extends StatelessWidget {
           '(${tourModel.reviews} ${StringConst.review.tr})',
           style: TextStyle(
             fontSize: 16,
-            color: appController.isDarkModeOn.value
-                ? Colors.grey[300]
-                : Colors.blueGrey.shade500,
+            color: Colors.blueGrey.shade500,
           ),
         ),
         const Spacer(),
@@ -398,9 +386,7 @@ class TourDetailsScreen extends StatelessWidget {
                 Text(
                   titleTourDay,
                   style: AppStyles.black000Size16Fw500FfMont.copyWith(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.lightBackground
-                        : ColorConstants.black,
+                    color: ColorConstants.black,
                   ),
                 ),
                 SizedBox(height: getSize(12)),
@@ -408,9 +394,7 @@ class TourDetailsScreen extends StatelessWidget {
                   Text(
                     description,
                     style: AppStyles.black000Size14Fw400FfMont.copyWith(
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.lightBackground
-                          : ColorConstants.black,
+                      color: ColorConstants.black,
                     ),
                   ),
               ],
@@ -512,7 +496,7 @@ class TourDetailsScreen extends StatelessWidget {
 }
 
 class _buildCommentList extends StatelessWidget {
-  _buildCommentList({
+  const _buildCommentList({
     required this.commentController,
     required this.homeController,
     required this.id,
@@ -521,7 +505,6 @@ class _buildCommentList extends StatelessWidget {
   final CommentTourController commentController;
   final HomeController homeController;
   final String id;
-  AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -549,9 +532,7 @@ class _buildCommentList extends StatelessWidget {
                     Expanded(
                       child: Text(
                         comment.comment,
-                        style: appController.isDarkModeOn.value
-                            ? AppStyles.white000Size14Fw400FfMont
-                            : AppStyles.black000Size14Fw400FfMont,
+                        style: AppStyles.black000Size14Fw400FfMont,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -566,9 +547,7 @@ class _buildCommentList extends StatelessWidget {
                       ),
                       style: TextStyle(
                         fontSize: 12,
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.gray400
-                            : ColorConstants.kTextColor,
+                        color: ColorConstants.kTextColor,
                       ),
                     ),
                     const SizedBox(
@@ -578,9 +557,7 @@ class _buildCommentList extends StatelessWidget {
                       '${comment.likes.length} likes',
                       style: TextStyle(
                         fontSize: 12,
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.gray400
-                            : ColorConstants.kTextColor,
+                        color: ColorConstants.kTextColor,
                       ),
                     )
                   ],

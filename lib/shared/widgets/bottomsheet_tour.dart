@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/modules/search/search.dart';
 import 'package:doan_clean_achitec/shared/constants/app_style.dart';
 import 'package:doan_clean_achitec/shared/shared.dart';
@@ -14,7 +13,6 @@ class BottomSheetTour extends GetView<SearchDesController> {
     required this.dataSheet,
   });
 
-  final AppController appController = Get.find();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -48,16 +46,12 @@ class BottomSheetTour extends GetView<SearchDesController> {
                   child: Icon(
                     Icons.cancel,
                     size: getSize(30),
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.lightStatusBar
-                        : ColorConstants.titleSearch,
+                    color: ColorConstants.titleSearch,
                   ),
                 ),
                 Text(
                   StringConst.destination.tr,
-                  style: appController.isDarkModeOn.value
-                      ? AppStyles.white000Size16Fw500FfMont
-                      : AppStyles.black000Size16Fw600FfMont,
+                  style: AppStyles.black000Size16Fw600FfMont,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -67,9 +61,7 @@ class BottomSheetTour extends GetView<SearchDesController> {
                   child: SvgPicture.asset(
                     AssetHelper.icDelete,
                     colorFilter: ColorFilter.mode(
-                      appController.isDarkModeOn.value
-                          ? ColorConstants.lightStatusBar
-                          : ColorConstants.titleSearch,
+                      ColorConstants.titleSearch,
                       BlendMode.srcIn,
                     ),
                     fit: BoxFit.fitHeight,
@@ -103,17 +95,13 @@ class BottomSheetTour extends GetView<SearchDesController> {
                                                 .value !=
                                             null
                                     ? ColorConstants.white
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.lightCard
-                                        : ColorConstants.black,
+                                    : ColorConstants.black,
                               ),
                             ),
                             backgroundColor:
                                 controller.isCheckChooseDes(data.value ?? "")
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                           ),
                         );
                       }).toList()
@@ -138,9 +126,7 @@ class BottomSheetTour extends GetView<SearchDesController> {
               children: [
                 Divider(
                   thickness: 0.5,
-                  color: appController.isDarkModeOn.value
-                      ? ColorConstants.btnCanCel
-                      : ColorConstants.gray.withOpacity(0.8),
+                  color: ColorConstants.gray.withOpacity(0.8),
                 ),
                 Padding(
                   padding: EdgeInsets.only(

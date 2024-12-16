@@ -3,7 +3,7 @@
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/models/user/user_model.dart';
 import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/modules/profile/profile_controller.dart';
@@ -25,7 +25,7 @@ class EditProfileScreen extends StatefulWidget {
 
 final UserController userController = Get.find();
 final ProfileController profileController = Get.find();
-final AppController appController = Get.find();
+
 final HomeController homeController = Get.find();
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
@@ -44,14 +44,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       appBar: CustomAppBar(
         titles: StringConst.changeProfile.tr,
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkAppBar
-            : ColorConstants.primaryButton,
+        backgroundColor: ColorConstants.primaryButton,
         iconBgrColor: ColorConstants.grayTextField,
       ),
       body: Obx(
@@ -119,9 +115,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                       decoration: BoxDecoration(
                                         image: DecorationImage(
                                           colorFilter: ColorFilter.mode(
-                                            appController.isDarkModeOn.value
-                                                ? ColorConstants.white
-                                                : ColorConstants.accent1,
+                                            ColorConstants.accent1,
                                             BlendMode.srcIn,
                                           ),
                                           image: const AssetImage(
@@ -154,9 +148,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     Text(
                       userController.userName.value,
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightBackground
-                            : ColorConstants.black,
+                        color: ColorConstants.black,
                         fontSize: 40,
                         fontWeight: FontWeight.w500,
                       ),
@@ -167,9 +159,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     Text(
                       StringConst.email.tr,
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightBackground
-                            : ColorConstants.graySub,
+                        color: ColorConstants.graySub,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -189,9 +179,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     Text(
                       StringConst.firstName.tr,
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightBackground
-                            : ColorConstants.graySub,
+                        color: ColorConstants.graySub,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -210,9 +198,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     Text(
                       StringConst.lastName.tr,
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightBackground
-                            : ColorConstants.graySub,
+                        color: ColorConstants.graySub,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -231,9 +217,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     Text(
                       StringConst.phoneNumber.tr,
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightBackground
-                            : ColorConstants.graySub,
+                        color: ColorConstants.graySub,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -259,9 +243,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     Text(
                       StringConst.location.tr,
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.lightBackground
-                            : ColorConstants.graySub,
+                        color: ColorConstants.graySub,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),

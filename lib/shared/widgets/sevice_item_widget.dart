@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/shared/constants/app_style.dart';
 import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/utils/size_utils.dart';
@@ -20,8 +19,6 @@ class SeviceItemWidget extends StatelessWidget {
     super.key,
   });
 
-  final AppController appController = Get.find();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,11 +28,8 @@ class SeviceItemWidget extends StatelessWidget {
       ),
       width: getSize(84),
       decoration: BoxDecoration(
-        color: isCheckActive
-            ? ColorConstants.primaryButton
-            : appController.isDarkModeOn.value
-                ? ColorConstants.darkCard
-                : ColorConstants.white,
+        color:
+            isCheckActive ? ColorConstants.primaryButton : ColorConstants.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: ColorConstants.darkGray.withOpacity(.2),
@@ -55,9 +49,7 @@ class SeviceItemWidget extends StatelessWidget {
                 colorFilter: ColorFilter.mode(
                   isCheckActive
                       ? ColorConstants.white
-                      : appController.isDarkModeOn.value
-                          ? ColorConstants.lightBackground
-                          : ColorConstants.titleSearch,
+                      : ColorConstants.titleSearch,
                   BlendMode.srcIn,
                 ),
               ),
@@ -74,9 +66,7 @@ class SeviceItemWidget extends StatelessWidget {
             style: isCheckActive
                 ? AppStyles.white000Size12Fw400FfMont
                 : AppStyles.black000Size12Fw400FfMont.copyWith(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.lightBackground
-                        : ColorConstants.darkStatusBar,
+                    color: ColorConstants.darkStatusBar,
                   ),
           ),
         ],

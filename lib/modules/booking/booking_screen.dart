@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/modules/tour/tour_controller.dart';
 import 'package:doan_clean_achitec/shared/constants/app_style.dart';
@@ -22,7 +21,6 @@ class BookingScreen extends GetView<BookingController> {
   HomeController homeController = Get.find();
   BookingController bookingController = Get.put(BookingController());
   TourController tourController = Get.put(TourController());
-  final AppController appController = Get.find();
 
   static String dateSelected = '';
 
@@ -47,14 +45,10 @@ class BookingScreen extends GetView<BookingController> {
       },
       child: Obx(
         () => Scaffold(
-          backgroundColor: appController.isDarkModeOn.value
-              ? ColorConstants.darkBackground
-              : ColorConstants.lightBackground,
+          backgroundColor:  ColorConstants.lightBackground,
           appBar: CustomAppBar(
             titles: StringConst.booking.tr,
-            backgroundColor: appController.isDarkModeOn.value
-                ? ColorConstants.darkAppBar
-                : ColorConstants.primaryButton,
+            backgroundColor:  ColorConstants.primaryButton,
             iconBgrColor: ColorConstants.grayTextField,
             onTap: () {
               if (homeController.currentIndex.value != 0) {
@@ -74,9 +68,7 @@ class BookingScreen extends GetView<BookingController> {
                     Text(
                       StringConst.chooseYourFavorite.tr,
                       style: AppStyles.botTitle000Size14Fw400FfMont.copyWith(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.dividerColor
-                            : ColorConstants.botTitle,
+                        color: ColorConstants.botTitle,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -88,9 +80,7 @@ class BookingScreen extends GetView<BookingController> {
                         isExpanded: true,
                         underline: Divider(
                           thickness: 0.5,
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.darkCard
-                              : ColorConstants.lightCard,
+                          color:  ColorConstants.lightCard,
                         ),
                         items: tourController.items.value != null
                             ? tourController.items.value!
@@ -102,9 +92,7 @@ class BookingScreen extends GetView<BookingController> {
                                         SvgPicture.asset(
                                           AssetHelper.icLocation,
                                           colorFilter: ColorFilter.mode(
-                                            appController.isDarkModeOn.value
-                                                ? ColorConstants.white
-                                                : ColorConstants.accent1,
+                                            ColorConstants.accent1,
                                             BlendMode.srcIn,
                                           ),
                                           width: getSize(34),
@@ -118,9 +106,7 @@ class BookingScreen extends GetView<BookingController> {
                                               .botTitle000Size14Fw400FfMont
                                               .copyWith(
                                             color:
-                                                appController.isDarkModeOn.value
-                                                    ? ColorConstants.white
-                                                    : ColorConstants.botTitle,
+                                                 ColorConstants.botTitle,
                                           ),
                                         ),
                                       ],
@@ -150,10 +136,7 @@ class BookingScreen extends GetView<BookingController> {
                                               style: AppStyles
                                                   .botTitle000Size14Fw400FfMont
                                                   .copyWith(
-                                                color: appController
-                                                        .isDarkModeOn.value
-                                                    ? ColorConstants.white
-                                                    : ColorConstants.botTitle,
+                                                color:  ColorConstants.botTitle,
                                               ),
                                             ),
                                             SizedBox(
@@ -164,10 +147,7 @@ class BookingScreen extends GetView<BookingController> {
                                               style: AppStyles
                                                   .botTitle000Size14Fw400FfMont
                                                   .copyWith(
-                                                color: appController
-                                                        .isDarkModeOn.value
-                                                    ? ColorConstants.white
-                                                    : ColorConstants.botTitle,
+                                                color:  ColorConstants.botTitle,
                                               ),
                                               overflow: TextOverflow.ellipsis,
                                             ),
@@ -188,9 +168,7 @@ class BookingScreen extends GetView<BookingController> {
                             vertical: getSize(8),
                           ),
                           decoration: BoxDecoration(
-                            color: appController.isDarkModeOn.value
-                                ? ColorConstants.darkCard
-                                : ColorConstants.lightCard,
+                            color:  ColorConstants.lightCard,
                             borderRadius: BorderRadius.circular(
                               getSize(14),
                             ),
@@ -202,9 +180,7 @@ class BookingScreen extends GetView<BookingController> {
                           padding: EdgeInsets.only(left: getSize(16)),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
-                            color: appController.isDarkModeOn.value
-                                ? ColorConstants.darkCard
-                                : ColorConstants.lightCard,
+                            color:  ColorConstants.lightCard,
                           ),
                           scrollbarTheme: ScrollbarThemeData(
                             radius: const Radius.circular(40),
@@ -235,9 +211,7 @@ class BookingScreen extends GetView<BookingController> {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.darkCard
-                              : ColorConstants.lightCard,
+                          color:  ColorConstants.lightCard,
                           borderRadius: BorderRadius.circular(getSize(14)),
                         ),
                         padding: EdgeInsets.only(
@@ -252,9 +226,7 @@ class BookingScreen extends GetView<BookingController> {
                               AssetHelper.icCalendar,
                               width: getSize(32),
                               colorFilter: ColorFilter.mode(
-                                appController.isDarkModeOn.value
-                                    ? ColorConstants.white
-                                    : ColorConstants.accent1,
+                                 ColorConstants.accent1,
                                 BlendMode.srcIn,
                               ),
                             ),
@@ -269,9 +241,7 @@ class BookingScreen extends GetView<BookingController> {
                                   StringConst.selectDate.tr,
                                   style: AppStyles.botTitle000Size14Fw400FfMont
                                       .copyWith(
-                                    color: appController.isDarkModeOn.value
-                                        ? ColorConstants.white
-                                        : ColorConstants.botTitle,
+                                    color:  ColorConstants.botTitle,
                                   ),
                                 ),
                                 SizedBox(
@@ -286,9 +256,7 @@ class BookingScreen extends GetView<BookingController> {
                                     style: AppStyles
                                         .botTitle000Size14Fw400FfMont
                                         .copyWith(
-                                      color: appController.isDarkModeOn.value
-                                          ? ColorConstants.white
-                                          : ColorConstants.black,
+                                      color:ColorConstants.black,
                                     ),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
@@ -335,9 +303,7 @@ class BookingScreen extends GetView<BookingController> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             alignment: Alignment.center,
-                            backgroundColor: appController.isDarkModeOn.value
-                                ? ColorConstants.darkCard
-                                : ColorConstants.btnCanCel,
+                            backgroundColor:  ColorConstants.btnCanCel,
                           ),
                           onPressed: () {
                             if (homeController.currentIndex.value != 0) {
@@ -346,9 +312,7 @@ class BookingScreen extends GetView<BookingController> {
                           },
                           child: Text(
                             StringConst.cancel.tr,
-                            style: appController.isDarkModeOn.value
-                                ? AppStyles.white000Size18Fw500FfMont
-                                : AppStyles.black000Size18Fw500FfMont,
+                            style:  AppStyles.black000Size18Fw500FfMont,
                           ),
                         ),
                       ),

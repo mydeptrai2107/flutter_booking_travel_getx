@@ -4,7 +4,6 @@ import 'package:doan_clean_achitec/modules/profile/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../dark_mode.dart';
 import '../../../modules/auth/user_controller.dart';
 import '../../constants/assets_helper.dart';
 import '../../constants/colors.dart';
@@ -17,7 +16,7 @@ class ProfileWidget extends StatelessWidget {
   });
 
   final UserController userController;
-  final AppController appController = Get.find();
+
   final ProfileController profileController = Get.find();
   final HomeController homeController = Get.find();
 
@@ -26,9 +25,7 @@ class ProfileWidget extends StatelessWidget {
     return Obx(
       () => Container(
         decoration: BoxDecoration(
-          color: appController.isDarkModeOn.value
-              ? ColorConstants.darkCard
-              : ColorConstants.white,
+          color: ColorConstants.white,
           borderRadius: BorderRadius.circular(getSize(24)),
         ),
         padding: EdgeInsets.all(getSize(20)),
@@ -61,9 +58,7 @@ class ProfileWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           colorFilter: ColorFilter.mode(
-                            appController.isDarkModeOn.value
-                                ? ColorConstants.white
-                                : ColorConstants.accent1,
+                            ColorConstants.accent1,
                             BlendMode.srcIn,
                           ),
                           image: const AssetImage(
@@ -84,9 +79,7 @@ class ProfileWidget extends StatelessWidget {
                         ? userController.userName.value
                         : "",
                     style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.white
-                            : Colors.black,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.w600),
                   ),
@@ -98,9 +91,7 @@ class ProfileWidget extends StatelessWidget {
                         ? userController.userEmail.value
                         : '',
                     style: TextStyle(
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.white
-                          : Colors.black,
+                      color: Colors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
@@ -108,9 +99,7 @@ class ProfileWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 4, bottom: 16),
                     child: Divider(
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.btnCanCel
-                          : ColorConstants.graySecond,
+                      color: ColorConstants.graySecond,
                       thickness: getSize(0.5),
                       endIndent: getSize(16),
                     ),
@@ -121,9 +110,7 @@ class ProfileWidget extends StatelessWidget {
                         ? "-"
                         : "+84 ${homeController.userModel.value?.phoneNub}",
                     style: TextStyle(
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.white
-                          : ColorConstants.titleSub,
+                      color: ColorConstants.titleSub,
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
@@ -131,9 +118,7 @@ class ProfileWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 4, bottom: 16),
                     child: Divider(
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.btnCanCel
-                          : ColorConstants.graySecond,
+                      color: ColorConstants.graySecond,
                       thickness: getSize(0.5),
                       endIndent: getSize(16),
                     ),
@@ -144,9 +129,7 @@ class ProfileWidget extends StatelessWidget {
                         ? "-"
                         : '${homeController.userModel.value?.location}',
                     style: TextStyle(
-                      color: appController.isDarkModeOn.value
-                          ? ColorConstants.white
-                          : ColorConstants.titleSub,
+                      color: ColorConstants.titleSub,
                       fontWeight: FontWeight.w400,
                       fontSize: 16,
                     ),

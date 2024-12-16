@@ -20,9 +20,7 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: MediaQuery.of(context).size.width * .7,
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor: ColorConstants.lightBackground,
       child: Column(
         children: [
           SizedBox(
@@ -42,9 +40,7 @@ class DrawerWidget extends StatelessWidget {
                 child: SvgPicture.asset(
                   AssetHelper.icoNextLeft,
                   colorFilter: ColorFilter.mode(
-                    appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : ColorConstants.graySub,
+                    ColorConstants.graySub,
                     BlendMode.srcIn,
                   ),
                   width: getSize(22),
@@ -62,9 +58,7 @@ class DrawerWidget extends StatelessWidget {
                 SvgPicture.asset(
                   AssetHelper.icProfile,
                   colorFilter: ColorFilter.mode(
-                    appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : ColorConstants.graySub,
+                    ColorConstants.graySub,
                     BlendMode.srcIn,
                   ),
                   width: getSize(22),
@@ -76,9 +70,7 @@ class DrawerWidget extends StatelessWidget {
                 Text(
                   StringConst.profile.tr,
                   style: TextStyle(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : Colors.black,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
@@ -91,9 +83,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Divider(
             thickness: 0.5,
-            color: appController.isDarkModeOn.value
-                ? ColorConstants.btnCanCel
-                : ColorConstants.black.withOpacity(0.8),
+            color: ColorConstants.black.withOpacity(0.8),
             indent: 16,
             endIndent: 80,
           ),
@@ -103,9 +93,7 @@ class DrawerWidget extends StatelessWidget {
                 SvgPicture.asset(
                   AssetHelper.icBag,
                   colorFilter: ColorFilter.mode(
-                    appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : ColorConstants.graySub,
+                    ColorConstants.graySub,
                     BlendMode.srcIn,
                   ),
                   width: getSize(22),
@@ -117,9 +105,7 @@ class DrawerWidget extends StatelessWidget {
                 Text(
                   StringConst.booking.tr,
                   style: TextStyle(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : Colors.black,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
@@ -133,9 +119,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Divider(
             thickness: 0.5,
-            color: appController.isDarkModeOn.value
-                ? ColorConstants.btnCanCel
-                : ColorConstants.black.withOpacity(0.8),
+            color: ColorConstants.black.withOpacity(0.8),
             indent: 16,
             endIndent: 80,
           ),
@@ -145,9 +129,7 @@ class DrawerWidget extends StatelessWidget {
                 SvgPicture.asset(
                   AssetHelper.icHeart,
                   colorFilter: ColorFilter.mode(
-                    appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : ColorConstants.graySub,
+                    ColorConstants.graySub,
                     BlendMode.srcIn,
                   ),
                   width: getSize(22),
@@ -159,9 +141,7 @@ class DrawerWidget extends StatelessWidget {
                 Text(
                   StringConst.favorite.tr,
                   style: TextStyle(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : Colors.black,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
@@ -174,9 +154,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Divider(
             thickness: 0.5,
-            color: appController.isDarkModeOn.value
-                ? ColorConstants.btnCanCel
-                : ColorConstants.black.withOpacity(0.8),
+            color: ColorConstants.black.withOpacity(0.8),
             indent: 16,
             endIndent: 80,
           ),
@@ -186,9 +164,7 @@ class DrawerWidget extends StatelessWidget {
                 SvgPicture.asset(
                   AssetHelper.icDocument,
                   colorFilter: ColorFilter.mode(
-                    appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : ColorConstants.graySub,
+                    ColorConstants.graySub,
                     BlendMode.srcIn,
                   ),
                   width: getSize(22),
@@ -200,9 +176,7 @@ class DrawerWidget extends StatelessWidget {
                 Text(
                   StringConst.history.tr,
                   style: TextStyle(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : Colors.black,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
@@ -215,9 +189,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Divider(
             thickness: 0.5,
-            color: appController.isDarkModeOn.value
-                ? ColorConstants.btnCanCel
-                : ColorConstants.black.withOpacity(0.8),
+            color: ColorConstants.black.withOpacity(0.8),
             indent: 16,
             endIndent: 80,
           ),
@@ -227,9 +199,7 @@ class DrawerWidget extends StatelessWidget {
                 SvgPicture.asset(
                   AssetHelper.icWallet,
                   colorFilter: ColorFilter.mode(
-                    appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : ColorConstants.graySub,
+                    ColorConstants.graySub,
                     BlendMode.srcIn,
                   ),
                   width: getSize(22),
@@ -241,9 +211,7 @@ class DrawerWidget extends StatelessWidget {
                 Text(
                   StringConst.tours.tr,
                   style: TextStyle(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : Colors.black,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
@@ -256,9 +224,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Divider(
             thickness: 0.5,
-            color: appController.isDarkModeOn.value
-                ? ColorConstants.btnCanCel
-                : ColorConstants.black.withOpacity(0.8),
+            color: ColorConstants.black.withOpacity(0.8),
             indent: 16,
             endIndent: 80,
           ),
@@ -278,9 +244,7 @@ class DrawerWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.btnCanCel
-                              : ColorConstants.black.withOpacity(0.8),
+                          color: ColorConstants.black.withOpacity(0.8),
                           width: 1,
                         ),
                       ),
@@ -289,9 +253,7 @@ class DrawerWidget extends StatelessWidget {
                     child: Text(
                       StringConst.logout.tr,
                       style: TextStyle(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.btnCanCel
-                            : ColorConstants.black,
+                        color: ColorConstants.black,
                         fontSize: 22,
                         fontWeight: FontWeight.w500,
                       ),
@@ -302,9 +264,7 @@ class DrawerWidget extends StatelessWidget {
                   ),
                   Image.asset(
                     AssetHelper.icoLogout,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.btnCanCel
-                        : ColorConstants.graySub,
+                    color: ColorConstants.graySub,
                     width: 24,
                     height: 24,
                   ),

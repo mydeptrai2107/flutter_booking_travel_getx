@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/shared/constants/app_style.dart';
 import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/constants/dimension_constants.dart';
@@ -14,7 +13,6 @@ import '../constants/string_constants.dart';
 class SelectDateScreen extends StatelessWidget {
   SelectDateScreen({super.key});
 
-  final AppController appController = Get.find();
 
   DateTime? rangeStartDate;
   DateTime? rangeEndDate;
@@ -32,9 +30,7 @@ class SelectDateScreen extends StatelessWidget {
             Text(
               StringConst.selectDate.tr,
               style: AppStyles.black000Size18Fw500FfMont.copyWith(
-                color: appController.isDarkModeOn.value
-                    ? ColorConstants.white
-                    : ColorConstants.black,
+                color: ColorConstants.black,
               ),
             ),
             SizedBox(

@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/models/city/city_model.dart';
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
 import 'package:doan_clean_achitec/modules/favorite/favorite.dart';
@@ -16,9 +16,7 @@ import '../../shared/utils/size_utils.dart';
 
 // ignore: must_be_immutable
 class FavoriteScreen extends GetView<FavoriteController> {
-  FavoriteScreen({super.key});
-
-  final AppController appController = Get.find();
+  const FavoriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +26,11 @@ class FavoriteScreen extends GetView<FavoriteController> {
       length: 2,
       child: Scaffold(
         appBar: CustomAppBar(
-          backgroundColor: appController.isDarkModeOn.value
-              ? ColorConstants.darkAppBar
-              : ColorConstants.primaryButton,
+          backgroundColor: ColorConstants.primaryButton,
           iconBgrColor: ColorConstants.lightAppBar,
           titles: "Favourite",
         ),
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkBackground
-            : ColorConstants.lightBackground,
+        backgroundColor: ColorConstants.lightBackground,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
           child: Column(
@@ -47,13 +41,9 @@ class FavoriteScreen extends GetView<FavoriteController> {
                   Expanded(
                     child: TabBar(
                       isScrollable: true,
-                      labelColor: appController.isDarkModeOn.value
-                          ? ColorConstants.primaryButton
-                          : ColorConstants.primaryButton,
+                      labelColor: ColorConstants.primaryButton,
                       unselectedLabelColor: ColorConstants.gray600,
-                      indicatorColor: appController.isDarkModeOn.value
-                          ? ColorConstants.primaryButton
-                          : ColorConstants.primaryButton,
+                      indicatorColor: ColorConstants.primaryButton,
                       tabs: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.5,

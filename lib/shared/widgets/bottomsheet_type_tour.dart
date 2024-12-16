@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/modules/search/search.dart';
 import 'package:doan_clean_achitec/shared/constants/app_style.dart';
 import 'package:doan_clean_achitec/shared/shared.dart';
@@ -15,7 +14,7 @@ class BottomSheetTypeTour extends StatelessWidget {
   });
 
   final SearchDesController controller = Get.find();
-  final AppController appController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,9 +38,7 @@ class BottomSheetTypeTour extends StatelessWidget {
                       ),
                       Text(
                         "Tickets for entertainment and sightseeing",
-                        style: appController.isDarkModeOn.value
-                            ? AppStyles.white000Size14Fw500FfMont
-                            : AppStyles.black000Size15Fw500FfMont,
+                        style: AppStyles.black000Size15Fw500FfMont,
                       ),
                       SizedBox(
                         height: getSize(8),
@@ -65,17 +62,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -110,17 +103,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -152,17 +141,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -194,17 +179,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -236,17 +217,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -278,17 +255,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -320,17 +293,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -362,17 +331,13 @@ class BottomSheetTypeTour extends StatelessWidget {
                                           .isCheckChooseType(data.typeNub)
                                           .value
                                       ? AppStyles.white000Size13Fw400FfMont
-                                      : appController.isDarkModeOn.value
-                                          ? AppStyles.white000Size13Fw400FfMont
-                                          : AppStyles.black000Size13Fw400FfMont,
+                                      : AppStyles.black000Size13Fw400FfMont,
                                 ),
                                 backgroundColor: controller
                                         .isCheckChooseType(data.typeNub)
                                         .value
                                     ? ColorConstants.primaryButton
-                                    : appController.isDarkModeOn.value
-                                        ? ColorConstants.darkCard
-                                        : const Color(0xFFedf1f7),
+                                    : const Color(0xFFedf1f7),
                               ),
                             );
                           }).toList(),
@@ -390,9 +355,7 @@ class BottomSheetTypeTour extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
-                  color: appController.isDarkModeOn.value
-                      ? ColorConstants.darkCard
-                      : ColorConstants.white,
+                  color: ColorConstants.white,
                   padding: EdgeInsets.all(getSize(20)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -402,23 +365,17 @@ class BottomSheetTypeTour extends StatelessWidget {
                         child: Icon(
                           Icons.cancel,
                           size: getSize(30),
-                          color: appController.isDarkModeOn.value
-                              ? ColorConstants.lightStatusBar
-                              : ColorConstants.titleSearch,
+                          color: ColorConstants.titleSearch,
                         ),
                       ),
                       Text(
                         "Type Service",
-                        style: appController.isDarkModeOn.value
-                            ? AppStyles.white000Size16Fw500FfMont
-                            : AppStyles.black000Size16Fw600FfMont,
+                        style: AppStyles.black000Size16Fw600FfMont,
                       ),
                       SvgPicture.asset(
                         AssetHelper.icDelete,
                         colorFilter: ColorFilter.mode(
-                          appController.isDarkModeOn.value
-                              ? ColorConstants.lightStatusBar
-                              : ColorConstants.titleSearch,
+                          ColorConstants.titleSearch,
                           BlendMode.srcIn,
                         ),
                         fit: BoxFit.fitHeight,
@@ -433,16 +390,12 @@ class BottomSheetTypeTour extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
-                  color: appController.isDarkModeOn.value
-                      ? ColorConstants.darkCard
-                      : ColorConstants.white,
+                  color: ColorConstants.white,
                   child: Column(
                     children: [
                       Divider(
                         thickness: 0.5,
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.btnCanCel
-                            : ColorConstants.gray.withOpacity(0.8),
+                        color: ColorConstants.gray.withOpacity(0.8),
                       ),
                       Padding(
                         padding: EdgeInsets.only(

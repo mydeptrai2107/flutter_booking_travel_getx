@@ -1,8 +1,6 @@
 import 'package:doan_clean_achitec/shared/shared.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../dark_mode.dart';
 import '../constants/app_style.dart';
 import 'user_profile_setting_item.dart';
 
@@ -15,7 +13,7 @@ class BuildSettingsGroup extends StatelessWidget {
   final double? iconItemSize;
   final String? subTitle;
 
-  BuildSettingsGroup(
+  const BuildSettingsGroup(
       {super.key,
       this.settingsGroupTitle,
       this.settingsGroupTitleStyle,
@@ -24,8 +22,6 @@ class BuildSettingsGroup extends StatelessWidget {
       required this.items,
       this.subTitle,
       this.iconItemSize});
-
-  final AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +36,7 @@ class BuildSettingsGroup extends StatelessWidget {
                   child: Text(
                     settingsGroupTitle!,
                     style: (settingsGroupTitleStyle == null)
-                        ? appController.isDarkModeOn.value
-                            ? AppStyles.white000Size16Fw500FfMont
-                            : AppStyles.gray800Size16Fw500FfMont
+                        ? AppStyles.gray800Size16Fw500FfMont
                         : settingsGroupTitleStyle,
                   ),
                 )
@@ -52,9 +46,7 @@ class BuildSettingsGroup extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              color: appController.isDarkModeOn.value
-                  ? ColorConstants.darkCard
-                  : ColorConstants.lightCard,
+              color: ColorConstants.lightCard,
               borderRadius: BorderRadius.circular(15),
             ),
             padding: const EdgeInsets.only(top: 10, bottom: 10),
@@ -82,9 +74,7 @@ class BuildSettingsGroup extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.only(left: 12.0, right: 12.0),
                       child: Divider(
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.darkGray.withOpacity(.5)
-                            : ColorConstants.black.withOpacity(.15),
+                        color: ColorConstants.black.withOpacity(.15),
                         thickness: 0.5,
                       ),
                     );

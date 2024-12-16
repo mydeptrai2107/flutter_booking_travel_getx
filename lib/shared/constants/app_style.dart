@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../dark_mode.dart';
 import 'colors.dart';
 
 class FontFamily {
@@ -10,8 +8,6 @@ class FontFamily {
 }
 
 class AppStyles {
-  static AppController appController = Get.find();
-
   // white
   static TextStyle white000Size30Fw600FfMont = const TextStyle(
     fontFamily: FontFamily.mont,
@@ -264,36 +260,28 @@ class AppStyles {
     fontFamily: FontFamily.mont,
     fontSize: 20,
     fontWeight: FontWeight.w500,
-    color: appController.isDarkModeOn.value
-        ? ColorConstants.white
-        : ColorConstants.black,
+    color: ColorConstants.black,
   );
 
   static TextStyle black000Size14Fw400FfMont = TextStyle(
     fontFamily: FontFamily.mont,
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    color: appController.isDarkModeOn.value
-        ? ColorConstants.lightCard
-        : ColorConstants.black,
+    color: ColorConstants.black,
   );
 
   static TextStyle black000Size14Fw500FfMont = TextStyle(
     fontFamily: FontFamily.mont,
     fontSize: 14,
     fontWeight: FontWeight.w500,
-    color: appController.isDarkModeOn.value
-        ? ColorConstants.lightCard
-        : ColorConstants.black,
+    color: ColorConstants.black,
   );
 
   static TextStyle black000Size15Fw500FfMont = TextStyle(
     fontFamily: FontFamily.mont,
     fontSize: 15,
     fontWeight: FontWeight.w500,
-    color: appController.isDarkModeOn.value
-        ? ColorConstants.lightCard
-        : ColorConstants.black,
+    color: ColorConstants.black,
   );
 
   static TextStyle black000Size14Fw600FfMont = TextStyle(

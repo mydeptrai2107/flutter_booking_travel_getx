@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
 import 'package:doan_clean_achitec/modules/booking/booking_option/booking_option_controller.dart';
 import 'package:doan_clean_achitec/modules/booking/booking_request.dart';
@@ -22,7 +21,6 @@ import '../booking_controller.dart';
 class BookingPaymentScreen extends GetView<BookingOptionController> {
   BookingPaymentScreen({super.key});
 
-  final AppController appController = Get.find();
   final UserController userController = Get.put(UserController());
   final BookingController bookingController = Get.put(BookingController());
   final HomeController homeController = Get.find();
@@ -36,14 +34,10 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
     return Scaffold(
       appBar: CustomAppBar(
         titles: "Payment Booking".tr,
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkAppBar
-            : ColorConstants.primaryButton,
+        backgroundColor:  ColorConstants.primaryButton,
         iconBgrColor: ColorConstants.lightBackground,
       ),
-      backgroundColor: appController.isDarkModeOn.value
-          ? ColorConstants.darkBackground
-          : ColorConstants.lightBackground,
+      backgroundColor:  ColorConstants.lightBackground,
       body: SafeArea(
         child: Stack(
           children: [
@@ -53,9 +47,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                 children: [
                   Container(
                     width: double.infinity,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.darkCard
-                        : ColorConstants.lightCard,
+                    color: ColorConstants.lightCard,
                     child: Padding(
                       padding: EdgeInsets.all(getSize(20)),
                       child: Column(
@@ -63,9 +55,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                         children: [
                           Text(
                             StringConst.paymentBanking.tr,
-                            style: appController.isDarkModeOn.value
-                                ? AppStyles.white000Size18Fw600FfMont
-                                : AppStyles.black000Size18Fw600FfMont,
+                            style:  AppStyles.black000Size18Fw600FfMont,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             softWrap: false,
@@ -78,9 +68,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                             children: [
                               Text(
                                 "5621 000 246 6118",
-                                style: appController.isDarkModeOn.value
-                                    ? AppStyles.white000Size16Fw400FfMont
-                                    : AppStyles.black000Size16Fw400FfMont,
+                                style: AppStyles.black000Size16Fw400FfMont,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 softWrap: false,
@@ -128,9 +116,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                           ),
                           Text(
                             "BIDV DO VAN LAM",
-                            style: appController.isDarkModeOn.value
-                                ? AppStyles.white000Size16Fw400FfMont
-                                : AppStyles.black000Size16Fw400FfMont,
+                            style:  AppStyles.black000Size16Fw400FfMont,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             softWrap: false,
@@ -144,9 +130,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                   ),
                   Container(
                     width: double.infinity,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.darkCard
-                        : ColorConstants.lightCard,
+                    color: ColorConstants.lightCard,
                     child: Padding(
                       padding: EdgeInsets.all(getSize(20)),
                       child: Column(
@@ -154,9 +138,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                         children: [
                           Text(
                             StringConst.scanQRCode.tr,
-                            style: appController.isDarkModeOn.value
-                                ? AppStyles.white000Size18Fw600FfMont
-                                : AppStyles.black000Size18Fw600FfMont,
+                            style: AppStyles.black000Size18Fw600FfMont,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             softWrap: false,
@@ -186,9 +168,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                   ),
                   Container(
                     width: double.infinity,
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.darkCard
-                        : ColorConstants.lightCard,
+                    color: ColorConstants.lightCard,
                     child: Padding(
                       padding: EdgeInsets.all(getSize(20)),
                       child: Column(
@@ -196,9 +176,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                         children: [
                           Text(
                             StringConst.banking.tr,
-                            style: appController.isDarkModeOn.value
-                                ? AppStyles.white000Size18Fw600FfMont
-                                : AppStyles.black000Size18Fw600FfMont,
+                            style: AppStyles.black000Size18Fw600FfMont,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             softWrap: false,
@@ -434,9 +412,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
               child: Container(
                 height: getSize(84),
                 padding: EdgeInsets.all(getSize(16)),
-                color: appController.isDarkModeOn.value
-                    ? ColorConstants.darkCard
-                    : ColorConstants.lightCard,
+                color: ColorConstants.lightCard,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -451,9 +427,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                             ),
                             TextSpan(
                               text: 'VND ',
-                              style: appController.isDarkModeOn.value
-                                  ? AppStyles.white000Size14Fw400FfMont
-                                  : AppStyles.black000Size14Fw400FfMont,
+                              style: AppStyles.black000Size14Fw400FfMont,
                             ),
                           ],
                         ),
@@ -472,7 +446,7 @@ class BookingPaymentScreen extends GetView<BookingOptionController> {
                           bookingRequestController.childrenNumb.value ?? 0,
                           bookingRequestController.totalPrice.value ?? 0,
                         );
-                        Get.offAndToNamed(Routes.HISTORY_TOUR_SCREEN);
+                        Get.offAllNamed(Routes.HOME);
                       },
                     ),
                   ],

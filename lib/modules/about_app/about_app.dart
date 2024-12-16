@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/shared/constants/app_style.dart';
 import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/constants/string_constants.dart';
@@ -9,18 +8,14 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class AboutAppScreen extends StatelessWidget {
-  final AppController appController = Get.find();
-
-  AboutAppScreen({super.key});
+  const AboutAppScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
         titles: StringConst.aboutApp.tr,
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkAppBar
-            : ColorConstants.primaryButton,
+        backgroundColor: ColorConstants.primaryButton,
         iconBgrColor: ColorConstants.grayTextField,
       ),
       body: Padding(
@@ -34,9 +29,7 @@ class AboutAppScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 'Dream Travel',
-                style: appController.isDarkModeOn.value
-                    ? AppStyles.white000Size24Fw600FfMont
-                    : AppStyles.black000Size24Fw500FfMont,
+                style: AppStyles.black000Size24Fw500FfMont,
               ),
               Text(
                 ' 1.0.0',
@@ -46,9 +39,7 @@ class AboutAppScreen extends StatelessWidget {
               Text(
                 StringConst.embark.tr,
                 style: TextStyle(
-                  color: appController.isDarkModeOn.value
-                      ? ColorConstants.gray100
-                      : ColorConstants.grey800,
+                  color: ColorConstants.grey800,
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),
@@ -58,9 +49,7 @@ class AboutAppScreen extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   StringConst.unlockAWorld.tr,
-                  style: appController.isDarkModeOn.value
-                      ? AppStyles.white000Size18Fw600FfMont
-                      : AppStyles.black000Size18Fw600FfMont,
+                  style: AppStyles.black000Size18Fw600FfMont,
                 ),
               ),
               const SizedBox(height: 10),
@@ -114,9 +103,7 @@ class AboutAppScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 StringConst.experienceTheWorld.tr,
-                style: appController.isDarkModeOn.value
-                    ? AppStyles.white000Size18Fw600FfMont
-                    : AppStyles.black000Size18Fw600FfMont,
+                style: AppStyles.black000Size18Fw600FfMont,
               ),
             ],
           ),

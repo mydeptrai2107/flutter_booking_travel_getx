@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../../dark_mode.dart';
 import '../../../shared/constants/colors.dart';
 import '../../../shared/constants/dimension_constants.dart';
 import '../../../shared/widgets/stateful/title.dart';
 
 class TitleDes extends StatelessWidget {
-  TitleDes({
+  const TitleDes({
     super.key,
     required this.largeTitle,
     required this.seeAll,
@@ -17,8 +15,6 @@ class TitleDes extends StatelessWidget {
   final String largeTitle;
   final String seeAll;
   final VoidCallback? onTap;
-
-  final AppController appController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +27,7 @@ class TitleDes extends StatelessWidget {
           child: Text(
             seeAll,
             style: TextStyle(
-              color: appController.isDarkModeOn.value
-                  ? const Color.fromARGB(255, 142, 153, 247)
-                  : ColorConstants.primaryButton.withOpacity(.5),
+              color: ColorConstants.primaryButton.withOpacity(.5),
               fontSize: kIconRadius,
             ),
           ),

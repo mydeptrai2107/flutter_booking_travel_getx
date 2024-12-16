@@ -1,7 +1,7 @@
 // ignore_for_file: use_super_parameters
 
 import 'dart:io';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
@@ -30,7 +30,6 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
 
   final UploadVideoController uploadVideoController =
       Get.put(UploadVideoController());
-  final AppController appController = Get.find();
 
   @override
   void initState() {
@@ -105,9 +104,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                       StringConst.share.tr,
                       style: TextStyle(
                         fontSize: 20,
-                        color: appController.isDarkModeOn.value
-                            ? ColorConstants.white
-                            : ColorConstants.accent1,
+                        color: ColorConstants.accent1,
                       ),
                     ),
                   ),

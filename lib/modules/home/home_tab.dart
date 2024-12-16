@@ -38,9 +38,7 @@ class HomeTab extends GetView<HomeController> {
           tourController.getAllTourModelData();
         },
         child: Scaffold(
-          backgroundColor: appController.isDarkModeOn.value
-              ? ColorConstants.darkBackground
-              : ColorConstants.lightBackground,
+          backgroundColor: ColorConstants.lightBackground,
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Padding(

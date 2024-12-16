@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:doan_clean_achitec/dark_mode.dart';
+
 import 'package:doan_clean_achitec/models/city/city_model.dart';
 import 'package:doan_clean_achitec/models/tour/tour_model.dart';
-import 'package:doan_clean_achitec/modules/home/home.dart';
 import 'package:doan_clean_achitec/modules/search/search_controller.dart';
 import 'package:doan_clean_achitec/modules/tour/tour.dart';
 import 'package:doan_clean_achitec/routes/app_pages.dart';
@@ -20,7 +19,6 @@ import '../../shared/utils/size_utils.dart';
 class TabSearchWidget extends GetView<SearchDesController> {
   TabSearchWidget({super.key});
 
-  final AppController appController = Get.find();
   final TourController tourController = Get.find();
 
   @override
@@ -28,9 +26,7 @@ class TabSearchWidget extends GetView<SearchDesController> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: appController.isDarkModeOn.value
-            ? ColorConstants.darkBackground
-            : ColorConstants.lightBackground,
+        backgroundColor: ColorConstants.lightBackground,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
           child: Column(
@@ -41,13 +37,9 @@ class TabSearchWidget extends GetView<SearchDesController> {
                   Expanded(
                     child: TabBar(
                       isScrollable: true,
-                      labelColor: appController.isDarkModeOn.value
-                          ? ColorConstants.primaryButton
-                          : ColorConstants.primaryButton,
+                      labelColor: ColorConstants.primaryButton,
                       unselectedLabelColor: ColorConstants.gray600,
-                      indicatorColor: appController.isDarkModeOn.value
-                          ? ColorConstants.primaryButton
-                          : ColorConstants.primaryButton,
+                      indicatorColor: ColorConstants.primaryButton,
                       tabs: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
@@ -137,9 +129,7 @@ class TabSearchWidget extends GetView<SearchDesController> {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(getSize(20)),
-              color: appController.isDarkModeOn.value
-                  ? ColorConstants.darkCard
-                  : ColorConstants.lightCard,
+              color: ColorConstants.lightCard,
             ),
             child: Padding(
               padding: EdgeInsets.all(getSize(24)),
@@ -169,10 +159,8 @@ class TabSearchWidget extends GetView<SearchDesController> {
                                 if (rowIndex <
                                     controller.listCitys.value.length - 1)
                                   Divider(
-                                    color: appController.isDarkModeOn.value
-                                        ? ColorConstants.darkGray
-                                            .withOpacity(.5)
-                                        : ColorConstants.black.withOpacity(.15),
+                                    color:
+                                        ColorConstants.black.withOpacity(.15),
                                     thickness: 0.5,
                                   ),
                               ],
@@ -203,9 +191,7 @@ class TabSearchWidget extends GetView<SearchDesController> {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(getSize(20)),
-            color: appController.isDarkModeOn.value
-                ? ColorConstants.darkCard
-                : ColorConstants.lightCard,
+            color: ColorConstants.lightCard,
           ),
           child: Padding(
             padding: EdgeInsets.all(getSize(24)),
@@ -245,10 +231,8 @@ class TabSearchWidget extends GetView<SearchDesController> {
                                 Container(
                                   margin: EdgeInsets.only(bottom: getSize(16)),
                                   child: Divider(
-                                    color: appController.isDarkModeOn.value
-                                        ? ColorConstants.darkGray
-                                            .withOpacity(.5)
-                                        : ColorConstants.black.withOpacity(.15),
+                                    color:
+                                        ColorConstants.black.withOpacity(.15),
                                     thickness: 0.5,
                                   ),
                                 ),
@@ -278,9 +262,7 @@ class TabSearchWidget extends GetView<SearchDesController> {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(getSize(20)),
-            color: appController.isDarkModeOn.value
-                ? ColorConstants.darkCard
-                : ColorConstants.lightCard,
+            color: ColorConstants.lightCard,
           ),
           child: Padding(
             padding: EdgeInsets.all(getSize(24)),
@@ -330,9 +312,7 @@ class TabSearchWidget extends GetView<SearchDesController> {
                                   SizedBox(width: getSize(24)),
                                   Text(
                                     reversedList?[rowIndex].nameCity ?? '',
-                                    style: appController.isDarkModeOn.value
-                                        ? AppStyles.white000Size14Fw400FfMont
-                                        : AppStyles.black000Size14Fw400FfMont,
+                                    style: AppStyles.black000Size14Fw400FfMont,
                                   ),
                                 ],
                               ),
@@ -342,9 +322,7 @@ class TabSearchWidget extends GetView<SearchDesController> {
                                           .length -
                                       1)
                                 Divider(
-                                  color: appController.isDarkModeOn.value
-                                      ? ColorConstants.darkGray.withOpacity(.5)
-                                      : ColorConstants.black.withOpacity(.15),
+                                  color: ColorConstants.black.withOpacity(.15),
                                   thickness: 0.5,
                                 ),
                             ],
@@ -414,9 +392,7 @@ class ItemSearchDes extends StatelessWidget {
             ),
             Text(
               cityModel.nameCity,
-              style: appController.isDarkModeOn.value
-                  ? AppStyles.white000Size14Fw400FfMont
-                  : AppStyles.black000Size14Fw400FfMont,
+              style: AppStyles.black000Size14Fw400FfMont,
             ),
           ],
         ),
@@ -508,9 +484,7 @@ class ItemTourSearch extends StatelessWidget {
             ),
             Text(
               tourModel.nameTour,
-              style: appController.isDarkModeOn.value
-                  ? AppStyles.white000Size14Fw400FfMont
-                  : AppStyles.black000Size14Fw400FfMont,
+              style: AppStyles.black000Size14Fw400FfMont,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

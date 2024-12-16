@@ -1,4 +1,3 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -10,7 +9,7 @@ import '../../constants/colors.dart';
 import '../../utils/size_utils.dart';
 
 class SearchBarWidget extends StatelessWidget {
-  SearchBarWidget({
+  const SearchBarWidget({
     super.key,
     this.hintText,
     this.textEditingController,
@@ -23,15 +22,11 @@ class SearchBarWidget extends StatelessWidget {
   final Function(String)? onChanged;
   final FocusNode? focusNode;
 
-  final AppController appController = Get.find();
-
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: appController.isDarkModeOn.value
-            ? ColorConstants.darkCard
-            : ColorConstants.lightCard,
+        color: ColorConstants.lightCard,
         borderRadius: BorderRadius.circular(14),
       ),
       padding:
@@ -43,9 +38,7 @@ class SearchBarWidget extends StatelessWidget {
             height: getSize(18),
             width: getSize(18),
             colorFilter: ColorFilter.mode(
-              appController.isDarkModeOn.value
-                  ? ColorConstants.white
-                  : ColorConstants.titleSearch,
+              ColorConstants.titleSearch,
               BlendMode.srcIn,
             ),
           ),
@@ -58,20 +51,16 @@ class SearchBarWidget extends StatelessWidget {
               controller: textEditingController,
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle: AppStyles.titleSearchSize16Fw400FfMont.copyWith(
-                    color: appController.isDarkModeOn.value
-                        ? ColorConstants.white
-                        : ColorConstants.titleSearch),
+                hintStyle: AppStyles.titleSearchSize16Fw400FfMont
+                    .copyWith(color: ColorConstants.titleSearch),
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.symmetric(
                   vertical: getSize(9),
                 ),
                 alignLabelWithHint: true,
               ),
-              style: AppStyles.titleSearchSize16Fw400FfMont.copyWith(
-                  color: appController.isDarkModeOn.value
-                      ? ColorConstants.white
-                      : ColorConstants.titleSearch),
+              style: AppStyles.titleSearchSize16Fw400FfMont
+                  .copyWith(color: ColorConstants.titleSearch),
               onChanged: onChanged,
             ),
           ),
@@ -85,9 +74,7 @@ class SearchBarWidget extends StatelessWidget {
               height: getSize(20),
               width: getSize(20),
               colorFilter: ColorFilter.mode(
-                appController.isDarkModeOn.value
-                    ? ColorConstants.white
-                    : ColorConstants.graySecond,
+                ColorConstants.graySecond,
                 BlendMode.srcIn,
               ),
             ),

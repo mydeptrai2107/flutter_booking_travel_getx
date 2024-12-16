@@ -1,8 +1,6 @@
-import 'package:doan_clean_achitec/dark_mode.dart';
 import 'package:doan_clean_achitec/shared/constants/colors.dart';
 import 'package:doan_clean_achitec/shared/shared.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class MyTextField extends StatefulWidget {
   // ignore: prefer_typing_uninitialized_variables
@@ -41,12 +39,8 @@ class _MyTextFieldState extends State<MyTextField> {
     });
   }
 
-  final AppController appController = Get.find();
-
   @override
   Widget build(BuildContext context) {
-    final AppController appController = Get.find();
-
     return TextFormField(
       controller: widget.controller,
       focusNode: _focusNode,
@@ -79,9 +73,7 @@ class _MyTextFieldState extends State<MyTextField> {
         fillColor: Colors.grey.shade100,
         labelText: widget.hintText,
         labelStyle: TextStyle(
-          color: appController.isDarkModeOn.value
-              ? ColorConstants.white.withOpacity(.4)
-              : ColorConstants.accent1,
+          color: ColorConstants.accent1,
           fontWeight: FontWeight.w400,
         ),
         focusedErrorBorder: OutlineInputBorder(
