@@ -22,7 +22,6 @@ class HistoryScreen extends GetView<HistoryTourController> {
   UserController userController = Get.put(UserController());
   HomeController homeController = Get.put(HomeController());
 
-
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
@@ -40,71 +39,20 @@ class HistoryScreen extends GetView<HistoryTourController> {
           iconBgrColor: ColorConstants.grayTextField,
         ),
         backgroundColor: ColorConstants.lightBackground,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: TabBar(
-                    isScrollable: true,
-                    labelColor: ColorConstants.primaryButton,
-                    unselectedLabelColor: ColorConstants.gray600,
-                    indicatorColor: ColorConstants.primaryButton,
-                    tabs: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.24,
-                        child: Tab(text: 'Waiting'),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.24,
-                        child: Tab(text: 'Upcoming'),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.24,
-                        child: Tab(text: 'Happenning'),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.24,
-                        child: Tab(text: 'Completed'),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.24,
-                        child: Tab(text: 'Cancelled'),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  HistoryItemFinish(status: "waiting"),
-                  HistoryItemFinish(status: "coming"),
-                  HistoryItemFinish(status: "happenning"),
-                  HistoryItemFinish(status: "completed"),
-                  HistoryItemFinish(status: "canceled"),
-                ],
-              ),
-            ),
-          ],
-        ),
+        body: HistoryItemFinish(),
       ),
     );
   }
 }
 
 class HistoryItemFinish extends GetView<HistoryTourController> {
-  final String status;
   const HistoryItemFinish({
     super.key,
-    required this.status,
   });
 
   @override
   Widget build(BuildContext context) {
-    controller.getCurrentHisTab(status);
+    controller.getCurrentHisTab();
 
     return RefreshIndicator(
       onRefresh: () => controller.refreshHistory(),
@@ -145,51 +93,7 @@ class HistoryItemFinish extends GetView<HistoryTourController> {
                             0,
                         itemBuilder: (BuildContext context, int rowIndex) {
                           return GestureDetector(
-                            onTap: () {
-                              if (status == "waiting") {
-                                Get.snackbar(
-                                  StringConst.notification.tr,
-                                  StringConst
-                                      .waitForTheAdminToApproveTheTour.tr,
-                                );
-                              } else if (status == "canceled") {
-                                Get.snackbar(StringConst.notification.tr,
-                                    '${StringConst.tourCanceled.tr}!!!');
-                              } else if (status == "coming") {
-                                Get.toNamed(
-                                  Routes.TOUR_QR_CODE_DETAIL,
-                                  arguments: {
-                                    'arg1': controller
-                                        .listTourCurrentTabs.value?[rowIndex],
-                                    'arg2': "upcoming",
-                                    'arg3': controller.listTourCurrentTabsToDate
-                                        .value?[rowIndex],
-                                  },
-                                );
-                              } else if (status == "happenning") {
-                                Get.toNamed(
-                                  Routes.TOUR_QR_CODE_DETAIL,
-                                  arguments: {
-                                    'arg1': controller
-                                        .listTourCurrentTabs.value?[rowIndex],
-                                    'arg2': "happenning",
-                                    'arg3': controller.listTourCurrentTabsToDate
-                                        .value?[rowIndex],
-                                  },
-                                );
-                              } else if (status == "completed") {
-                                Get.toNamed(
-                                  Routes.TOUR_QR_CODE_DETAIL,
-                                  arguments: {
-                                    'arg1': controller
-                                        .listTourCurrentTabs.value?[rowIndex],
-                                    'arg2': "completed",
-                                    'arg3': controller.listTourCurrentTabsToDate
-                                        .value?[rowIndex],
-                                  },
-                                );
-                              }
-                            },
+                            onTap: () {},
                             child: Padding(
                               padding:
                                   EdgeInsets.symmetric(vertical: getSize(12)),
@@ -326,6 +230,13 @@ class _buildItemHistory extends StatelessWidget {
                   textAlign: TextAlign.left,
                   style: AppStyles.blue000Size14Fw400FfMont,
                 ),
+                Text(
+                  '${historyModel?.status}',
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.left,
+                  style: AppStyles.blue000Size14Fw400FfMont
+                      .copyWith(color: Colors.orangeAccent),
+                ),
               ],
             ),
           ),
@@ -335,23 +246,24 @@ class _buildItemHistory extends StatelessWidget {
           Expanded(
             flex: 1,
             child: ClipRRect(
-                borderRadius: BorderRadius.circular(getSize(14)),
-                child: tourModel?.images != null && tourModel?.images != []
-                    ? CachedNetworkImage(
-                        height: getSize(77),
-                        width: getSize(77),
-                        fit: BoxFit.cover,
-                        imageUrl: tourModel?.images?.first ?? '',
-                      )
-                    : Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                              AssetHelper.city_1,
-                            ),
+              borderRadius: BorderRadius.circular(getSize(14)),
+              child: tourModel?.images != null && tourModel?.images != []
+                  ? CachedNetworkImage(
+                      height: getSize(77),
+                      width: getSize(77),
+                      fit: BoxFit.cover,
+                      imageUrl: tourModel?.images?.first ?? '',
+                    )
+                  : Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            AssetHelper.city_1,
                           ),
                         ),
-                      )),
+                      ),
+                    ),
+            ),
           ),
         ],
       ),

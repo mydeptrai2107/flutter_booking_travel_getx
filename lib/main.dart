@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 
+import 'modules/lang/transparent_service.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterConfig.loadEnvVariables();
@@ -85,6 +87,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter GetX Clean Travel',
       theme: mainTheme.copyWith(brightness: Brightness.light),
       builder: EasyLoading.init(),
+      locale: TranslationService.locale,
+      fallbackLocale: TranslationService.fallbackLocale,
+      translations: TranslationService(),
     );
   }
 }

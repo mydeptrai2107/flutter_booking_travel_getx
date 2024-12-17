@@ -150,11 +150,6 @@ class AppPages {
       binding: TourBinding(),
     ),
     GetPage(
-      name: Routes.PAY_SCREEN,
-      page: () => const PaymentScreen(),
-      binding: PayBinding(),
-    ),
-    GetPage(
       name: Routes.BOOKING_REQUIED,
       page: () => BookingRequiedScreen(),
       binding: BookingBinding(),

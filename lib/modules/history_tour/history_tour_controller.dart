@@ -20,17 +20,9 @@ class HistoryTourController extends GetxController {
 
   final getAllListHistory = Rxn<List<TourModel>>([]);
   final getListHisWaiting = Rxn<List<TourModel>>([]);
-  final getListUpComing = Rxn<List<TourModel>>([]);
-  final getListHisHappenning = Rxn<List<TourModel>>([]);
-  final getListHisCompleted = Rxn<List<TourModel>>([]);
-  final getListHisCancel = Rxn<List<TourModel>>([]);
 
   final getAllListHistoryToDate = Rxn<List<HistoryModel>>([]);
   final getListHisWaitingToDate = Rxn<List<HistoryModel>>([]);
-  final getListHisUpComingToDate = Rxn<List<HistoryModel>>([]);
-  final getListHisHappenningToDate = Rxn<List<HistoryModel>>([]);
-  final getListHisCompletedToDate = Rxn<List<HistoryModel>>([]);
-  final getListHisCancelToDate = Rxn<List<HistoryModel>>([]);
 
   final listTourCurrentTabs = Rxn<List<TourModel>>([]);
   final listTourCurrentTabsToDate = Rxn<List<HistoryModel>>([]);
@@ -63,15 +55,10 @@ class HistoryTourController extends GetxController {
 
     getAllListHistory.value?.clear();
     getListHisWaiting.value?.clear();
-    getListUpComing.value?.clear();
-    getListHisHappenning.value?.clear();
-    getListHisCompleted.value?.clear();
-    getListHisCancel.value?.clear();
 
     getAllListHistory.value = await getTourHistory(userId);
     getListHisWaiting.value = await getTourHistoryByStatus(userId, 'waiting');
     await getTourHistoryByStatus(userId, 'done');
-    getListHisCancel.value = await getTourHistoryByStatus(userId, 'canceled');
   }
 
   Future<List<TourModel>?> getTourHistory(String userId) async {
@@ -125,7 +112,6 @@ class HistoryTourController extends GetxController {
     final snapShot = await _db
         .collection('historyModel')
         .where('idUser', isEqualTo: userId)
-        .where('status', isEqualTo: status)
         .get();
 
     final listTourHistoryData =
@@ -152,32 +138,19 @@ class HistoryTourController extends GetxController {
       getListHisWaitingToDate.value?.clear();
       getListHisWaitingToDate.value = listTourHistorySort;
     } else if (status == 'done') {
-      getListHisUpComingToDate.value = [];
-      getListHisHappenningToDate.value = [];
-      getListHisCompletedToDate.value = [];
       final now = Timestamp.now();
 
       for (int i = 0; i < listTourModel.length; i++) {
         if (listTourModel[i].startDate!.millisecondsSinceEpoch >
             now.millisecondsSinceEpoch) {
-          getListHisUpComingToDate.value?.add(listTourHistorySort[i]);
-          getListUpComing.value?.add(listTourModel[i]);
         } else if (listTourModel[i].startDate!.millisecondsSinceEpoch <=
                 now.millisecondsSinceEpoch &&
             listTourModel[i].endDate!.millisecondsSinceEpoch >=
                 now.millisecondsSinceEpoch) {
-          getListHisHappenningToDate.value?.add(listTourHistorySort[i]);
-          getListHisHappenning.value?.add(listTourModel[i]);
         } else if (listTourModel[i].startDate!.millisecondsSinceEpoch <
-            now.millisecondsSinceEpoch) {
-          getListHisCompletedToDate.value?.add(listTourHistorySort[i]);
-          getListHisCompleted.value?.add(listTourModel[i]);
-        }
+            now.millisecondsSinceEpoch) {}
       }
-    } else if (status == 'canceled') {
-      getListHisCancelToDate.value?.clear();
-      getListHisCancelToDate.value = listTourHistorySort;
-    }
+    } else if (status == 'canceled') {}
 
     return listTourModel;
   }
@@ -296,38 +269,12 @@ class HistoryTourController extends GetxController {
     }
   }
 
-  void getCurrentHisTab(String status) {
-    if (status == 'waiting') {
-      listTourCurrentTabs.value?.clear();
-      listTourCurrentTabs.value?.addAll(getListHisWaiting.value ?? []);
-      listTourCurrentTabsToDate.value?.clear();
-      listTourCurrentTabsToDate.value
-          ?.addAll(getListHisWaitingToDate.value ?? []);
-    } else if (status == 'coming') {
-      listTourCurrentTabs.value?.clear();
-      listTourCurrentTabs.value?.addAll(getListUpComing.value ?? []);
-      listTourCurrentTabsToDate.value?.clear();
-      listTourCurrentTabsToDate.value
-          ?.addAll(getListHisUpComingToDate.value ?? []);
-    } else if (status == 'happenning') {
-      listTourCurrentTabs.value?.clear();
-      listTourCurrentTabs.value?.addAll(getListHisHappenning.value ?? []);
-      listTourCurrentTabsToDate.value?.clear();
-      listTourCurrentTabsToDate.value
-          ?.addAll(getListHisHappenningToDate.value ?? []);
-    } else if (status == 'completed') {
-      listTourCurrentTabs.value?.clear();
-      listTourCurrentTabs.value?.addAll(getListHisCompleted.value ?? []);
-      listTourCurrentTabsToDate.value?.clear();
-      listTourCurrentTabsToDate.value
-          ?.addAll(getListHisCompletedToDate.value ?? []);
-    } else if (status == 'canceled') {
-      listTourCurrentTabs.value?.clear();
-      listTourCurrentTabs.value?.addAll(getListHisCancel.value ?? []);
-      listTourCurrentTabsToDate.value?.clear();
-      listTourCurrentTabsToDate.value
-          ?.addAll(getListHisCancelToDate.value ?? []);
-    }
+  void getCurrentHisTab() {
+    listTourCurrentTabs.value?.clear();
+    listTourCurrentTabs.value?.addAll(getListHisWaiting.value ?? []);
+    listTourCurrentTabsToDate.value?.clear();
+    listTourCurrentTabsToDate.value
+        ?.addAll(getListHisWaitingToDate.value ?? []);
   }
 
   Future<void> indicatorRive() async {
@@ -374,17 +321,9 @@ class HistoryTourController extends GetxController {
   void clearData() {
     getAllListHistory.value = [];
     getListHisWaiting.value = [];
-    getListUpComing.value = [];
-    getListHisHappenning.value = [];
-    getListHisCompleted.value = [];
-    getListHisCancel.value = [];
 
     getAllListHistoryToDate.value = [];
     getListHisWaitingToDate.value = [];
-    getListHisUpComingToDate.value = [];
-    getListHisHappenningToDate.value = [];
-    getListHisCompletedToDate.value = [];
-    getListHisCancelToDate.value = [];
 
     listTourCurrentTabs.value = [];
     listTourCurrentTabsToDate.value = [];
