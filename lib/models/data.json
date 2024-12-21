@@ -1,0 +1,411 @@
+[
+    {
+        "idTour": "KRXaJby8dMhYxBk40UxM",
+        "nameTour": "Núi Thần Tài",
+        "idCity": "43DN",
+        "startDate": "2024-03-17T00:00:00.000",
+        "endDate": "2024-03-21T00:00:00.000",
+        "price": 7000000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FN%C3%BAi%20Th%E1%BA%A7n%20T%C3%A0i%2Fe795fb01-22c0-40e1-9b8b-790d5f749ff4?alt=media&token=a65fff7f-df55-4a3b-b554-f9aed9e37960"
+        ],
+        "duration": 5,
+        "accommodation": "Đà Nẵng",
+        "itinerary": [
+          "Ngày 1: Sáng: Khám phá Cầu Rồng và chụp hình tại đường Phạm Văn Đồng, một trong những bờ biển đẹp nhất Đà Nẵng. Chiều: Thăm Quảng trường Marvin Gaye, cầu Trần Thị Lý và thưởng thức hải sản tại các nhà hàng ven biển. Tối: Dạo chơi quanh sông Hàn, thăm Cầu Tình Yêu và Cầu Thuận Phước.",
+          "Ngày 2: Sáng: Thăm Bán đảo Sơn Trà và Hải Đăng Sơn Trà. Trưa & Chiều: Thăm Bãi biển Mỹ Khê, thư giãn và tận hưởng dịch vụ tại các resort ven biển. Tối: Tham gia vào các hoạt động văn hóa tai Quận An Thượng.",
+          "Ngày 3: Suốt ngày: Dành cả ngày để thăm Bà Nà Hills, cưỡi cáp treo, tham quan Tượng Phật và vui chơi tại Khu vui chơi giải trí Fantasy Park.",
+          "Ngày 4: Sáng: Dành sáng để thăm Chùa Linh Ứng trên bán đảo Sơn Trà. Chiều: Đi xem phim tại một trong những rạp chiếu phim hiện đại của thành phố cũng là một ý hay. Tối: Đi dạo quanh trung tâm thành phố, tham quan và mua sắm tại Chợ Hàn.",
+          "Ngày 5: Sáng & Chiều: Thăm Cù Lao Chàm, một quần đảo tuyệt đẹp nằm cách Đà Nẵng khoảng 15km. Tại đây, bạn có thể đi snorkeling, lặn biển và khám phá đại dương bao la, hoặc thư giãn trên bãi biển và tận hưởng món hải sản tươi ngon. Tối: Dạo chơi và tìm hiểu văn hóa đường phố của Đà Nẵng tại quận Hải Châu."
+        ],
+        "includedServices": [
+          "Ngày 1: Sáng: Khám phá Cầu Rồng và chụp hình tại đường Phạm Văn Đồng, một trong những bờ biển đẹp nhất Đà Nẵng. Chiều: Thăm Quảng trường Marvin Gaye, cầu Trần Thị Lý và thưởng thức hải sản tại các nhà hàng ven biển. Tối: Dạo chơi quanh sông Hàn, thăm Cầu Tình Yêu và Cầu Thuận Phước.",
+          "Ngày 2: Sáng: Thăm Bán đảo Sơn Trà và Hải Đăng Sơn Trà. Trưa & Chiều: Thăm Bãi biển Mỹ Khê, thư giãn và tận hưởng dịch vụ tại các resort ven biển. Tối: Tham gia vào các hoạt động văn hóa tai Quận An Thượng.",
+          "Ngày 3: Suốt ngày: Dành cả ngày để thăm Bà Nà Hills, cưỡi cáp treo, tham quan Tượng Phật và vui chơi tại Khu vui chơi giải trí Fantasy Park.",
+          "Ngày 4: Sáng: Dành sáng để thăm Chùa Linh Ứng trên bán đảo Sơn Trà. Chiều: Đi xem phim tại một trong những rạp chiếu phim hiện đại của thành phố cũng là một ý hay. Tối: Đi dạo quanh trung tâm thành phố, tham quan và mua sắm tại Chợ Hàn.",
+          "Ngày 5: Sáng & Chiều: Thăm Cù Lao Chàm, một quần đảo tuyệt đẹp nằm cách Đà Nẵng khoảng 15km. Tại đây, bạn có thể đi snorkeling, lặn biển và khám phá đại dương bao la, hoặc thư giãn trên bãi biển và tận hưởng món hải sản tươi ngon. Tối: Dạo chơi và tìm hiểu văn hóa đường phố của Đà Nẵng tại quận Hải Châu."
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 5.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "Sale",
+        "type": 4.0,
+        "imgqr": null,
+        "location": "Đà Nẵng",
+        "isFavourite": false,
+        "description": "Công viên Suối khoáng nóng Núi Thần Tài là dự án do Công ty Cổ phần DHC Suối Đôi (thành viên Tổng Công ty Cổ phần Đầu tư DHC) làm chủ đầu tư."
+      },
+      {
+        "idTour": "SCIQ54q90EcaZzwaNDDl",
+        "nameTour": "Cầu Sông Hàn-Ngắm Hoàng Hôn",
+        "idCity": "43DN",
+        "startDate": "2024-04-10T00:00:00.000",
+        "endDate": "2024-04-13T00:00:00.000",
+        "price": 800000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FC%E1%BA%A7u%20S%C3%B4ng%20H%C3%A0n-Ng%E1%BA%AFm%20Ho%C3%A0ng%20H%C3%B4n%2F0a0b4c81-ae42-4f8b-bfb7-8f147ad4562d?alt=media&token=93c9475b-d174-40cc-b11c-364aff99ca7c",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FC%E1%BA%A7u%20S%C3%B4ng%20H%C3%A0n-Ng%E1%BA%AFm%20Ho%C3%A0ng%20H%C3%B4n%2Fd24f9857-b5c5-4638-a957-d68dab63f0fe?alt=media&token=3d361de2-7b05-4835-93f6-656e142d24ca",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FC%E1%BA%A7u%20S%C3%B4ng%20H%C3%A0n-Ng%E1%BA%AFm%20Ho%C3%A0ng%20H%C3%B4n%2F8afe69b6-2004-479f-99c2-a47d1e32a114?alt=media&token=a539356a-92df-4f66-808f-5b19717f37f2",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FC%E1%BA%A7u%20S%C3%B4ng%20H%C3%A0n-Ng%E1%BA%AFm%20Ho%C3%A0ng%20H%C3%B4n%2F07a33eab-d9bf-4e17-aef0-3d168afd3382?alt=media&token=d5fb8110-4143-4d4b-8b0c-e83c9f5fbb88"
+        ],
+        "duration": 4,
+        "accommodation": "Đà Nẵng",
+        "itinerary": [
+          "TOUR Ngắm hoàng hôn khởi hành hàng ngày: Đón khách 17:00, Khởi hành 17:30, Về bến 19:00",
+          "TOUR Thưởng ngoạn Sông Hàn từ thứ Hai đến thứ Năm hàng tuần: Đón khách 20:00, Khởi hành 20:30, Về bến 21:30",
+          "TOUR Thưởng ngoạn Sông Hàn ngắm Cầu Rồng Phun Lửa Nước từ thứ Sáu đến Chủ Nhật hàng tuần: Đón khách 20:00, Khởi hành 20:30, Về bến 21:30"
+        ],
+        "includedServices": [
+          "Múa Chăm",
+          "Live music band/DJ music/Guitar/Violon/Saxophone",
+          "Bartender",
+          "Photographer (về là có ảnh đẹp ngay)",
+          "Bảo hiểm hành khách",
+          "Đã bao gồm thuế VAT"
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 5.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "Popular",
+        "type": 7.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Phục vụ du khách trải nghiệm các Tour thưởng ngoạn Sông Hàn thơ mộng, bao gồm các dịch vụ như múa Chăm, âm nhạc trực tiếp, bartender, và photographer. Bao gồm thuế VAT và bảo hiểm hành khách."
+      },
+      {
+        "idTour": "YOH5FAYn6E0SlcU5kSX5",
+        "nameTour": "Tour Tổng hợp-Đà Nẵng",
+        "idCity": "43DN",
+        "startDate": "2024-04-10T00:00:00.000",
+        "endDate": "2024-04-13T00:00:00.000",
+        "price": 9000000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20T%E1%BB%95ng%20h%E1%BB%A3p-%C4%90%C3%A0%20N%E1%BA%B5ng%2F57f420a1-3be9-4cb6-80ac-d7c974a48b40?alt=media&token=47507e65-c32c-43f0-a2c4-d64c9c79e70f",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20T%E1%BB%95ng%20h%E1%BB%A3p-%C4%90%C3%A0%20N%E1%BA%B5ng%2F467d6630-d41c-4d52-b277-0fecf97c5fa1?alt=media&token=81a28a42-7a4e-4604-bc33-ff29e3c77b8c",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20T%E1%BB%95ng%20h%E1%BB%A3p-%C4%90%C3%A0%20N%E1%BA%B5ng%2F623a8759-65c6-4072-8b24-57c85beebdd5?alt=media&token=ae705730-54cd-432c-9585-6bcccf1ab259",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20T%E1%BB%95ng%20h%E1%BB%A3p-%C4%90%C3%A0%20N%E1%BA%B5ng%2F6c4343f0-fc74-463a-bb13-bd65c0f8ff7e?alt=media&token=ac6a610c-08da-4a4b-b82c-c38d2a55a78c",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20T%E1%BB%95ng%20h%E1%BB%A3p-%C4%90%C3%A0%20N%E1%BA%B5ng%2F6bcc5252-0f8f-4461-9abb-55e579d522c8?alt=media&token=9ec759e9-15aa-4c10-bf04-c635c15297d5",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20T%E1%BB%95ng%20h%E1%BB%A3p-%C4%90%C3%A0%20N%E1%BA%B5ng%2Ff1f08fd5-9aa0-44e4-92a8-49445b625bb0?alt=media&token=44419007-449d-472e-b6b2-8075799f1fec"
+        ],
+        "duration": 4,
+        "accommodation": "Hà Nội",
+        "itinerary": [
+          "Buổi sáng: Bán đảo Sơn Trà với các điểm đến nổi tiếng như chùa Linh Ứng, đỉnh Bàn Cờ - Cafe Sơn Trà Marina",
+          "Buổi chiều: Rừng dừa Bảy Mẫu - Phố cổ Hội An - Công viên ký ức Hội An rồi tối về lại Đà Nẵng vẫn chơi được rất thoải mái ở Hội An nên yên tâm nhen😊",
+          "Ngày 2 - Buổi sáng: Ngũ Hành Sơn và Hải Đăng Tiên Sa Hoặc Khu du lịch suối nước khoáng nóng Thần Tài",
+          "Buổi tối: chợ đêm Sơn Trà - chợ đêm Helio- cầu tình yêu❤️",
+          "Ngày 3 - Buổi sáng: Khu du lịch Bà Nà Hills (thăm quan tự túc hoặc tour du lịch)",
+          "Buổi chiều tối: biển Mỹ Khê - công biên Biển Đông",
+          "Ngày 4 - Các địa điểm gần trung tâm Bãi biển Mỹ Khê - Asia Park - Chợ Hàn",
+          "Đối với du khách có nhiều thời gian hơn, bạn có thể ở tại Hội An 1-2 đêm để tận hưởng không khí bình yên của phố cổ và trải nghiệm Vinpearl Nam Hội An.",
+          "Ngoài ra, dành trọn 1 ngày để thưởng thức hết tất cả các món ăn đặc sản Đà Nẵng cũng là một ý kiến không tồi."
+        ],
+        "includedServices": [
+          "Buổi sáng: Bán đảo Sơn Trà với các điểm đến nổi tiếng như chùa Linh Ứng, đỉnh Bàn Cờ - Cafe Sơn Trà Marina",
+          "Buổi chiều: Rừng dừa Bảy Mẫu - Phố cổ Hội An - Công viên ký ức Hội An rồi tối về lại Đà Nẵng vẫn chơi được rất thoải mái ở Hội An nên yên tâm nhen😊",
+          "Ngày 2 - Buổi sáng: Ngũ Hành Sơn và Hải Đăng Tiên Sa Hoặc Khu du lịch suối nước khoáng nóng Thần Tài",
+          "Buổi tối: chợ đêm Sơn Trà - chợ đêm Helio- cầu tình yêu❤️",
+          "Ngày 3 - Buổi sáng: Khu du lịch Bà Nà Hills (thăm quan tự túc hoặc tour du lịch)",
+          "Buổi chiều tối: biển Mỹ Khê - công biên Biển Đông",
+          "Ngày 4 - Các địa điểm gần trung tâm Bãi biển Mỹ Khê - Asia Park - Chợ Hàn",
+          "Đối với du khách có nhiều thời gian hơn, bạn có thể ở tại Hội An 1-2 đêm để tận hưởng không khí bình yên của phố cổ và trải nghiệm Vinpearl Nam Hội An.",
+          "Ngoài ra, dành trọn 1 ngày để thưởng thức hết tất cả các món ăn đặc sản Đà Nẵng cũng là một ý kiến không tồi."
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 5.1,
+        "active": true,
+        "specialOffers": [],
+        "status": "Sale",
+        "type": 3.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Nằm ở vùng Nam Trung Bộ, Đà Nẵng có cả núi, đồng bằng và biển. Các điểm tham quan du lịch nổi tiếng khi du lịch Đà Nẵng bao gồm khu du lịch Bà Nà, bãi biển Mỹ Khê, và khu vui chơi giải trí trong nhà Fantasy Park lớn nhất châu Á. Đà Nẵng còn có nhiều thắng cảnh đẹp mê hồn như đèo Hải Vân, rừng nguyên sinh ở bán đảo Sơn Trà và Ngũ Hành Sơn. Đặc biệt, Đà Nẵng được bao quanh bởi 3 di sản văn hóa thế giới. Bao gồm Huế, Hội An và Mỹ Sơn, và xa hơn chút nữa là Vườn Quốc Gia Phong Nha – Kẻ Bàng. Hàng năm, Đà Nẵng tổ chức Lễ hội pháo hoa thu hút rất nhiều du khách muôn phương đến tham dự."
+      },
+      {
+        "idTour": "5e0GzPB9k0zynGqCcYGt",
+        "nameTour": "Tour Vũng Tàu",
+        "idCity": "72VT",
+        "startDate": "2024-03-13T00:00:00.000",
+        "endDate": "2024-03-20T00:00:00.000",
+        "price": 4000000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2Fphu%20yen%20%2F61ee3392-c039-4537-b9c6-c7a72eb315ca?alt=media&token=385fbb00-6337-4da3-bbcd-1ac2d15da465"
+        ],
+        "duration": 3,
+        "accommodation": "Thành Phố Vũng Tàu",
+        "itinerary": [
+          "Buổi sáng: Thăm tượng Chúa Giêsu, ngắm toàn cảnh thành phố từ đỉnh tượng.",
+          "Buổi trưa: Thưởng thức các món ngon địa phương tại những quán ăn nổi tiếng.",
+          "Buổi tối: Dạo quanh Thành Phố, tham quan thưởng thức không gian về đêm tại Vũng Tàu.",
+          "Tour Vũng Tàu - Thanh Đức 3 ngày 2 đêm: Tour kết hợp tham quan các điểm hấp dẫn tại Vũng Tàu và trang trại Thanh Đức."
+        ],
+        "includedServices": [
+          "Buổi sáng: Ngắm cảnh tại Bãi Dứa - một bãi biển với cát mịn trắng và view biển cực đẹp.",
+          "Buổi trưa: Tận hưởng hải sản tươi ngon ngay tại các quán ăn gần bãi biển.",
+          "Buổi tối: Tham quan phố đèn đỏ, thưởng thức các món ăn địa phương và tham gia các hoạt động giải trí đêm.",
+          "Buổi sáng: Trải nghiệm cảnh đẹp và biển xanh tại Bãi Trước, hoặc bạn cũng có thể chọn thăm quan ngọn Hải Đăng Vũng Tàu.",
+          "Buổi trưa: Tham quan tu viện Thiền Viện Trúc Lâm Chơn Không, tận hưởng không gian yên bình và tìm hiểu thêm về văn hóa Phật giáo.",
+          "Buổi tối: Dạo chơi, mua sắm và thưởng thức ẩm thực ở các khu phố cổ."
+        ],
+        "excludedServices": [],
+        "reviews": 1.0,
+        "rating": 8.0,
+        "active": false,
+        "specialOffers": [],
+        "status": "Sale",
+        "type": 5.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Vũng Tàu, thành phố ven biển thuộc tỉnh Bà Rịa - Vũng Tàu, nổi tiếng với những bãi biển sạch đẹp và nhịp sống thư thái. Thành phố hấp dẫn du khách bởi cảnh quan thiên nhiên, ánh nắng ấm áp suốt cả năm qua, và các món ăn đặc sản phong phú từ hải sản. Đặc biệt, ngọn hải đăng Vũng Tàu - ngọn hải đăng cao nhất Việt Nam và Đông Nam Á, đứng trên đỉnh núi Nhỏ, là nơi du khách có thể chiêm ngưỡng toàn cảnh biển, ngắm hoàng hôn tuyệt đẹp. Bên cạnh đó, sự phồn hoa của văn hóa và lịch sử ở đây còn được thể hiện qua các công trình như tượng Chúa Giêsu, Tháp Bà và nhiều di tích khác."
+      },
+      {
+        "idTour": "Eg4r5g0oS69taGJP156d",
+        "nameTour": "Tour Quãng Ngãi - Đèo Violak",
+        "idCity": "76QN",
+        "startDate": "2024-04-11T00:00:00.000",
+        "endDate": "2024-04-13T00:00:00.000",
+        "price": 900000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20Qu%C3%A3ng%20Ng%C3%A3i%20-%20%C4%90%C3%A8o%20Violak%2Fcac757ff-061d-4f66-b869-b844cad5f16e?alt=media&token=e9fa962d-d4ea-4e6a-816d-8c9c8e72c89e",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20Qu%C3%A3ng%20Ng%C3%A3i%20-%20%C4%90%C3%A8o%20Violak%2F57065f7e-28b2-45ad-9630-7758fd26bce6?alt=media&token=e60bb288-e6f7-418a-bbea-d0fb82f53ff3"
+        ],
+        "duration": 3,
+        "accommodation": "Quãng Ngãi",
+        "itinerary": [
+          "Phượt",
+          "Lên đèo Violak"
+        ],
+        "includedServices": [
+          "Phượt",
+          "Lên đèo Violak"
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 4.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "New",
+        "type": 2.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Đèo Violak dài gần 30 km, ở độ cao 1.300 m. Đèo có độ dốc lớn, nhiều khúc cua tay áo và nhiều vực thẳm... Nơi đây từng xảy ra nhiều vụ tai nạn giao thông nghiêm trọng. Song, với khung cảnh sương mù, mây phủ dày đặc, đèo cũng là nơi giới trẻ và khách du lịch săn mây. Vết nứt dài giữa quốc lộ 24 ở đoạn đèo Violak."
+      },
+      {
+        "idTour": "82TfzAzrr8VJhU4O3jF8",
+        "nameTour": "Rừng dừa 7 mẫu-Hội An",
+        "idCity": "92QN",
+        "startDate": "2024-04-10T00:00:00.000",
+        "endDate": "2024-04-11T00:00:00.000",
+        "price": 150000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FR%E1%BB%ABng%20d%E1%BB%ABa%207%20m%E1%BA%ABu-H%E1%BB%99i%20An%2F7fcd1d55-024c-4bf5-b7cc-d78613bbf503?alt=media&token=496e902d-744c-4aac-b80e-d5999dfefd57",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FR%E1%BB%ABng%20d%E1%BB%ABa%207%20m%E1%BA%ABu-H%E1%BB%99i%20An%2F77896ae7-bfe7-4021-837c-88fb0654492f?alt=media&token=eae3d0ff-675a-4a1a-89eb-e269e4101455",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FR%E1%BB%ABng%20d%E1%BB%ABa%207%20m%E1%BA%ABu-H%E1%BB%99i%20An%2Fb9562164-4000-4186-b18d-abb0244fef85?alt=media&token=8d1588c8-43d3-4059-ba51-2ae0787f4113"
+        ],
+        "duration": 2,
+        "accommodation": "Thành phố Hồ Chí Minh",
+        "itinerary": [
+          "Xe và HDV đưa quý khách tiếp tục đến với Thiền Viện Trúc Lâm ngôi chùa lớn được xây dựng năm 1993 theo phái Thiền Tông với diện tích rộng 24 hecta cảnh quan đẹp nhìn xuống khu du lịch Hồ Tuyền Lâm."
+        ],
+        "includedServices": [
+          "Xe và HDV đưa quý khách tiếp tục đến với Thiền Viện Trúc Lâm ngôi chùa lớn được xây dựng năm 1993 theo phái Thiền Tông với diện tích rộng 24 hecta cảnh quan đẹp nhìn xuống khu du lịch Hồ Tuyền Lâm."
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 5.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "Popular",
+        "type": 4.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "GIỚI THIỆU VỀ KHU DI TÍCH LỊCH SỬ VĂN HOÁ RỪNG DỪA BẢY MẪU\nRừng Dừa Bảy Mẫu hay còn gọi là khu du lịch Rừng Dừa Cẩm Thanh. Có nhiều người còn gọi là Vườn Dừa Bảy Mẫu, đây là một khu du lịch khá nổi tiếng ở thành phố Hội An. Nếu có dịp ghé khu du lịch Rừng Dừa, bạn sẽ được các tay chèo điệu nghệ là những ngư dân chất phác, hiếu khách chở trên những chiếc thuyền thúng nhỏ xinh. Hãy thử một lần vào Rừng Dừa Bảy Mẫu, hòa mình vào khung cảnh thiên nhiên xanh mát của sông nước, mây trời và Rừng Dừa vô cùng xinh đẹp. Ở đó, bạn có thể xem các nghệ nhân chèo thúng biểu diễn múa thúng, chém nước hết sức điêu luyện và ấn tượng. Vẫn trong không gian thanh bình của Rừng Dừa, bạn có cơ hội trải nghiệm làm ngư dân, vung chài bắt cá hết sức thú vị, cảm nhận những làn điệu dân ca xứ Quảng ngọt ngào, thấm đượm tình người qua lời ca của những cô thôn nữ Cẩm Thanh duyên dáng."
+      },
+      {
+        "idTour": "ONwmM6d4O6TGz0p3PSjS",
+        "nameTour": "Hội An",
+        "idCity": "92QN",
+        "startDate": "2024-04-10T11:15:46.987247",
+        "endDate": "2024-04-10T11:15:46.988090",
+        "price": 500000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FH%E1%BB%99i%20An%2Fa7b5c832-af2c-4823-9914-f43e005421d7?alt=media&token=1832f4f0-9595-4af7-9613-682247ed712d"
+        ],
+        "duration": 1,
+        "accommodation": "Quảng Nam",
+        "itinerary": [
+          "Mùa khô (tháng 2 - tháng 8):   Tháng 2 đến hết tháng 4: đây là thời điểm lý tưởng nhất cho chuyến du lịch Hội An. Bởi thời tiết đầu xuân mát mẻ, nắng cũng dịu nhẹ và ít mưa. Tháng 5 đến tháng 8: thời tiết Hội An những tháng hè luôn có nắng đẹp và không có mưa. Tuy nhiên, một số ngày có nắng khá gắt khiến bạn có đôi chút khó chịu."
+        ],
+        "includedServices": [
+          "Máy bay: là phương tiện đến Hội An nhanh chóng nhất. Từ TP.HCM, Hà Nội, bạn có thể mua vé đến Đà Nẵng rồi tiếp tục hành trình tới Hội An bằng xe buýt hoặc taxi. Thời gian di chuyển chỉ mất khoảng 1 giờ bay và giá vé dao động từ 400.000 - 1.600.000 VNĐ/chiều."
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 4.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "Sale",
+        "type": 5.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Hội An – nơi mà cuộc sống cứ bình lặng như thế. Hội An – nơi mà dường như dòng chảy vô tình của thời gian chẳng thể nào vùi lấp đi cái không khí cổ xưa. Những mái ngói cũ phủ đầy rêu phong, những con đường ngập trong sắc đỏ của đèn lồng, những bức hoành phi được chạm trổ tinh vi, tất cả như đưa ta về với một thế giới của vài trăm năm trước."
+      },
+      {
+        "idTour": "B3rN4hFmLRR6620naBhe",
+        "nameTour": "Huế",
+        "idCity": "75HU",
+        "startDate": "2024-04-10T11:12:43.077127",
+        "endDate": "2024-04-10T11:12:43.078055",
+        "price": 5000000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FHu%E1%BA%BF%2F71495ba9-f369-4031-8075-3f90c2675ed7?alt=media&token=ca1fc1f2-abd5-4049-bd15-d0a557617984",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FHu%E1%BA%BF%2Fac9e1225-782d-41a7-850c-ff9eaa91e9e1?alt=media&token=2c7f5bc3-36e6-4867-a065-35ebcafb5e57",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FHu%E1%BA%BF%2Fb93de9fb-a183-42ad-b8b4-cb52a2c5e3ba?alt=media&token=7801be4c-641b-4a54-9556-ae617cf50095"
+        ],
+        "duration": 1,
+        "accommodation": "Thừa Thiên Huế",
+        "itinerary": [
+          "Ngày 2: Sáng: Thăm Chợ Đông Ba, nơi bạn có thể mua sắm và thưởng thức thêm đặc sản Huế. Sau đó, du ngoạn dọc sông Hương bằng đò hoặc thuyền. Trưa: Ăn trưa và nghỉ ngơi chút đỉnh trước khi tới Bạch Mã hoặc Đèo Hải Vân Chiều: Dừng chân và tham quan ở Đèo Hải Vân hoặc Công viên quốc gia Bạch Mã nếu bạn muốn vận động và tận hưởng thiên nhiên. Tối: Kết thúc 2 ngày bằng một bữa ăn tối tại một nhà hàng sang trọng trên sông Hương, hoặc đơn giản là thư giãn với một ly cà phê trong không gian yên tĩnh của thành phố.",
+          "Ngày 3: Sáng: Thăm Chợ Đông Ba, nơi bạn có thể mua sắm và thưởng thức thêm đặc sản Huế. Sau đó, du ngoạn dọc sông Hương bằng đò hoặc thuyền. Trưa: Ăn trưa và nghỉ ngơi chút đỉnh trước khi tới Bạch Mã hoặc Đèo Hải Vân Chiều: Dừng chân và tham quan ở Đèo Hải Vân hoặc Công viên quốc gia Bạch Mã nếu bạn muốn vận động và tận hưởng thiên nhiên. Tối: Kết thúc 2 ngày bằng một bữa ăn tối tại một nhà hàng sang trọng trên sông Hương, hoặc đơn giản là thư giãn với một ly cà phê trong không gian yên tĩnh của thành phố."
+        ],
+        "includedServices": [
+          "Ngày 2: Sáng: Thăm Chợ Đông Ba, nơi bạn có thể mua sắm và thưởng thức thêm đặc sản Huế. Sau đó, du ngoạn dọc sông Hương bằng đò hoặc thuyền. Trưa: Ăn trưa và nghỉ ngơi chút đỉnh trước khi tới Bạch Mã hoặc Đèo Hải Vân Chiều: Dừng chân và tham quan ở Đèo Hải Vân hoặc Công viên quốc gia Bạch Mã nếu bạn muốn vận động và tận hưởng thiên nhiên. Tối: Kết thúc 2 ngày bằng một bữa ăn tối tại một nhà hàng sang trọng trên sông Hương, hoặc đơn giản là thư giãn với một ly cà phê trong không gian yên tĩnh của thành phố.",
+          "Ngày 3: Sáng: Thăm Chợ Đông Ba, nơi bạn có thể mua sắm và thưởng thức thêm đặc sản Huế. Sau đó, du ngoạn dọc sông Hương bằng đò hoặc thuyền. Trưa: Ăn trưa và nghỉ ngơi chút đỉnh trước khi tới Bạch Mã hoặc Đèo Hải Vân Chiều: Dừng chân và tham quan ở Đèo Hải Vân hoặc Công viên quốc gia Bạch Mã nếu bạn muốn vận động và tận hưởng thiên nhiên. Tối: Kết thúc 2 ngày bằng một bữa ăn tối tại một nhà hàng sang trọng trên sông Hương, hoặc đơn giản là thư giãn với một ly cà phê trong không gian yên tĩnh của thành phố."
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 5.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "New",
+        "type": 1.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Huế, một thành phố phía Bắc miền Trung Việt Nam, từng là thủ đô của Đại Việt trong thời kỳ nhà Nguyễn. Thành phố nổi tiếng với những di tích lịch sử quan trọng, trong đó có Cố đô Huế, một di sản thế giới được UNESCO công nhận. Huế cũng nổi tiếng với món ăn độc đáo và phong cách kiến trúc độc đáo của mình."
+      },
+      {
+        "idTour": "OrVV5VUyYe9dGHLvlDUH",
+        "nameTour": "The Florest - Hoa Trong Rừng",
+        "idCity": "49DL",
+        "startDate": "2024-02-28T00:00:00.000",
+        "endDate": "2024-02-29T00:00:00.000",
+        "price": 2500000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/doan-final-travel.appspot.com/o/tours%2FTour%20%C4%90%C3%A0%20L%E1%BA%A1t%203N2%C4%90%20%3A%20%C4%90%C3%A0%20L%E1%BA%A1t%20-%20Th%C3%A0nh%20Ph%E1%BB%91%20Ng%C3%A0n%20Hoa%2F8b5f4151-84ac-4b29-b812-39f22b3a850c?alt=media&token=ed7d50dd-d144-4af5-b51d-cf48c8be5fba"
+        ],
+        "duration": 2,
+        "accommodation": "Victory Hotel",
+        "itinerary": [
+          {
+            "day": 1,
+            "activities": [
+              {
+                "time": "Morning",
+                "description": "Pickup from Liên Khương Airport or bus station, transfer to the city. Visit Bảo Đại Palace, a historical landmark built by Vietnam's last emperor, King Bảo Đại."
+              },
+              {
+                "time": "Afternoon",
+                "description": "Free time or other sightseeing options."
+              },
+              {
+                "time": "Evening",
+                "description": "Dinner in the city."
+              }
+            ]
+          },
+          {
+            "day": 2,
+            "activities": [
+              {
+                "time": "Morning",
+                "description": "Visit Puppy Farm, explore beautiful flower gardens with Hydrangeas, Sunflowers, and many more."
+              },
+              {
+                "time": "Afternoon",
+                "description": "Visit Japanese strawberry farm and high-tech tomato gardens, with an opportunity to pick your own fruits (at own cost)."
+              },
+              {
+                "time": "Evening",
+                "description": "Dinner at a local restaurant."
+              }
+            ]
+          }
+        ],
+        "includedServices": [
+          "Transportation to and from the city",
+          "Guided tours",
+          "Meals (Breakfast, Lunch, Dinner)",
+          "Visits to attractions"
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 5.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "Popular",
+        "type": 1.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Đà Lạt is known as the 'City of Flowers' with its diverse collection of flowers from local and exotic species, thanks to its favorable climate. This tour gives you the chance to explore the city's colorful floral landscape and discover new and charming spots."
+      },
+      {
+        "idTour": "oyiFxjo5GsuBQupqSgjb",
+        "nameTour": "Tour Đà Lạt-Thành phố ngàn hoa",
+        "idCity": "49DL",
+        "startDate": "2024-04-11T13:18:20.446580",
+        "endDate": "2024-04-11T13:18:20.447808",
+        "price": 450000.0,
+        "images": [
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20%C4%90%C3%A0%20L%E1%BA%A1t-Th%C3%A0nh%20ph%E1%BB%91%20ng%C3%A0n%20hoa%2F769f4677-a2b4-4e41-9256-2de8d4727492?alt=media&token=41124983-5247-47b8-a1c7-d736f1077006",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20%C4%90%C3%A0%20L%E1%BA%A1t-Th%C3%A0nh%20ph%E1%BB%91%20ng%C3%A0n%20hoa%2Fbc14b049-d39d-49ea-a2e3-f3e94377fa95?alt=media&token=03252030-835d-4d83-9b9f-5f1cd4123394",
+          "https://firebasestorage.googleapis.com/v0/b/booking-travel-flutter.appspot.com/o/tours%2FTour%20%C4%90%C3%A0%20L%E1%BA%A1t-Th%C3%A0nh%20ph%E1%BB%91%20ng%C3%A0n%20hoa%2Fd5899545-c510-4b6a-9eb2-b954d86bec6a?alt=media&token=126fb059-a582-4d25-8fc7-0df7c5655d75"
+        ],
+        "duration": 1,
+        "accommodation": "Muong Thanh Hotel",
+        "itinerary": [
+          {
+            "day": 1,
+            "activities": [
+              {
+                "time": "Morning",
+                "description": "Xe đón khách sân bay Liên Khương hoặc bến xe. Sau đó xe đưa quý khách về thành phố, quý khách nhập đoàn. HDV đưa quý khách tham quan Dinh Bảo Đại ngôi dinh thự được chính vua Bảo Đại – vị vua cuối cùng của Việt Nam xây dựng để nghỉ ngơi và làm việc tại Đà Lạt được nhà nước cấp hạng di tích quốc gia."
+              },
+              {
+                "time": "Morning",
+                "description": "Xe và HDV đưa quý khách tiếp tục đến với Thiền Viện Trúc Lâm, ngôi chùa lớn được xây dựng năm 1993 theo phái Thiền Tông với diện tích rộng 24 hecta, cảnh quan đẹp nhìn xuống khu du lịch Hồ Tuyền Lâm."
+              }
+            ]
+          }
+        ],
+        "includedServices": [
+          "Xe đón khách sân bay Liên Khương hoặc bến xe",
+          "Tham quan Dinh Bảo Đại",
+          "Tham quan Thiền Viện Trúc Lâm"
+        ],
+        "excludedServices": [],
+        "reviews": 0.0,
+        "rating": 9.0,
+        "active": true,
+        "specialOffers": [],
+        "status": "New",
+        "type": 3.0,
+        "imgqr": null,
+        "location": null,
+        "isFavourite": false,
+        "description": "Đà Lạt là thành phố của muôn hoa. Dường như bao nhiêu sắc hoa đều hội tụ về thành phố này. Từ những loài hoa quen thuộc cho đến vô vàn những sắc hoa đến từ phương xa. Mẹ thiên nhiên ưu ái dành tặng cho cao nguyên thổ nhưỡng thích hợp cho sự sinh trưởng của rất nhiều loại hoa cỏ. Cùng iVIVU khám phá ngay hôm nay!"
+      }
+      
+]
