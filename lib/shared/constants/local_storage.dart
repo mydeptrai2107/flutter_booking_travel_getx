@@ -49,8 +49,7 @@ class LocalStorageHelper {
   // history search string
   static Future<void> setListHistorySearch(String value) async {
     Set<String> setHistorySearch =
-        _shared._preferences.getStringList("setListHistorySearch")?.toSet() ??
-            Set();
+        _shared._preferences.getStringList("setListHistorySearch")!.toSet();
     setHistorySearch.add(value);
     _shared._preferences
         .setStringList("setListHistorySearch", setHistorySearch.toList());
@@ -64,8 +63,7 @@ class LocalStorageHelper {
 
   static Future<void> clearListHistorySearch() async {
     Set<String> setHistorySearch =
-        _shared._preferences.getStringList("setListHistorySearch")?.toSet() ??
-            Set();
+        _shared._preferences.getStringList("setListHistorySearch")!.toSet();
     setHistorySearch.clear();
     _shared._preferences
         .setStringList("setListHistorySearch", setHistorySearch.toList());

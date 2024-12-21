@@ -9,7 +9,7 @@ import 'package:like_button/like_button.dart';
 import '../../constants/app_style.dart';
 
 class HotelItemWidget extends StatelessWidget {
-  HotelItemWidget({
+  const HotelItemWidget({
     super.key,
   });
 

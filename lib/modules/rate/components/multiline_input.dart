@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import '../../../shared/constants/dimension_constants.dart';
 
 class MultilineInput extends StatelessWidget {
-  MultilineInput({
+  const MultilineInput({
     super.key,
   });
 

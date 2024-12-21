@@ -22,7 +22,7 @@ class NotificationHandler {
 
   void unSubcribe() {
     try {
-      messaging.unsubscribeFromTopic("notification_cms_okokadex").then(print);
+      messaging.unsubscribeFromTopic("notification_cms_okokadex");
     } catch (e) {
       if (kDebugMode) {
         print(e);
@@ -32,7 +32,7 @@ class NotificationHandler {
 
   void setListeners() {
     try {
-      messaging.subscribeToTopic("notification_cms_okokadex").then(print);
+      messaging.subscribeToTopic("notification_cms_okokadex");
     } catch (e) {
       if (kDebugMode) {
         print(e);

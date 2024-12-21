@@ -543,7 +543,7 @@ class _buildCommentList extends StatelessWidget {
                   children: [
                     Text(
                       tago.format(
-                        comment.datePublished.toDate(),
+                        comment.datePublished,
                       ),
                       style: TextStyle(
                         fontSize: 12,

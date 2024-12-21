@@ -25,7 +25,7 @@ class BuildSettingsItem extends StatelessWidget {
   final bool? isIconLanguage;
   final Function()? onLongPress;
 
-  BuildSettingsItem({
+  const BuildSettingsItem({
     super.key,
     this.imageAsset,
     this.iconStyle,

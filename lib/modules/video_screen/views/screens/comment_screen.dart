@@ -63,11 +63,11 @@ class CommentScreen extends StatelessWidget {
                             children: [
                               Text(
                                 tago.format(
-                                  comment.datePublished.toDate(),
+                                  comment.datePublished,
                                 ),
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color:  ColorConstants.kTextColor,
+                                  color: ColorConstants.kTextColor,
                                 ),
                               ),
                               const SizedBox(

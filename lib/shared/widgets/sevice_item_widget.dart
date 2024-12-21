@@ -11,7 +11,7 @@ class SeviceItemWidget extends StatelessWidget {
   final String seviceTitle;
   final bool isCheckActive;
 
-  SeviceItemWidget({
+  const SeviceItemWidget({
     this.onTap,
     required this.icon,
     required this.seviceTitle,
